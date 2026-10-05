@@ -30,6 +30,24 @@
       padding-bottom: 8px;
       border-bottom: 3px solid #1f3d63;
     }
+    .disclaimer-banner {
+      background-color: #eff6ff;
+      border: 1px solid #93c5fd;
+      color: #1e40af;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    .disclaimer-icon {
+      margin-right: 8px;
+      flex-shrink: 0;
+      color: #1d4ed8;
+    }
     .instructions-banner {
       background-color: #fef2f2;
       border: 1px solid #f87171;
@@ -180,6 +198,15 @@
 
   <div class="app-container">
     <div class="app-title">Route Status Entry</div>
+
+    <div class="disclaimer-banner">
+      <svg class="disclaimer-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="16" x2="12" y2="12"/>
+        <line x1="12" y1="8" x2="12.01" y2="8"/>
+      </svg>
+      <span><strong>Notice:</strong> Please allow 1–2 minutes for new submissions to be processed and reflected in the form upon refreshing.</span>
+    </div>
 
     <div class="instructions-banner">
       <svg class="banner-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
