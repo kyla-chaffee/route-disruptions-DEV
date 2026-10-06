@@ -196,13 +196,13 @@
     }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-    /* --- VIBRANT AUTUMN / FALL SEMI TRUCK LOADER STYLES --- */
+    /* --- CHRISTMAS / WINTER SEMI TRUCK LOADER STYLES --- */
     .truck-scene-card {
       width: 340px;
-      background: #3f1a0a;
+      background: #0f172a;
       border-radius: 12px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-      border: 2px solid #ea580c;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+      border: 2px solid #10b981;
       padding: 16px;
       text-align: center;
     }
@@ -210,44 +210,46 @@
       width: 100%;
       height: 120px;
       position: relative;
-      /* Warm Sunset Fall Gradient */
-      background: linear-gradient(to bottom, #ea580c 0%, #f97316 35%, #fde047 62%, #854d0e 62%, #542d0c 72%, #334155 72%);
+      /* Snowy Winter Night Sky Sky Gradient */
+      background: linear-gradient(to bottom, #0284c7 0%, #1e3a8a 45%, #e0f2fe 65%, #ffffff 65%, #cbd5e1 73%, #334155 73%);
       border-radius: 8px;
       overflow: hidden;
-      border: 1.5px solid #d97706;
+      border: 1.5px solid #38bdf8;
     }
     
-    /* Sun */
+    /* Glowing Christmas Star / Winter Moon */
     .truck-sun {
       position: absolute;
-      top: 10px;
-      right: 22px;
-      width: 24px;
-      height: 24px;
+      top: 8px;
+      right: 20px;
+      width: 22px;
+      height: 22px;
       background: #fef08a;
       border-radius: 50%;
-      box-shadow: 0 0 18px #fde047;
+      box-shadow: 0 0 16px #fef08a;
     }
 
-    /* Falling Leaves Animation */
-    .falling-leaf {
+    /* Falling Snow Animation */
+    .falling-snow {
       position: absolute;
       z-index: 10;
-      animation: leafDrift 2.5s linear infinite;
+      animation: snowDrift 2.4s linear infinite;
     }
-    .leaf-1 { top: 12px; left: 100%; animation-delay: 0s; }
-    .leaf-2 { top: 28px; left: 100%; animation-delay: 0.8s; }
-    .leaf-3 { top: 45px; left: 100%; animation-delay: 1.5s; }
+    .snow-1 { top: -10px; left: 85%; animation-delay: 0s; }
+    .snow-2 { top: -10px; left: 60%; animation-delay: 0.6s; }
+    .snow-3 { top: -10px; left: 35%; animation-delay: 1.2s; }
+    .snow-4 { top: -10px; left: 95%; animation-delay: 1.8s; }
+    .snow-5 { top: -10px; left: 15%; animation-delay: 0.9s; }
 
-    @keyframes leafDrift {
-      0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0.9; }
-      100% { transform: translateX(-360px) translateY(35px) rotate(360deg); opacity: 0.2; }
+    @keyframes snowDrift {
+      0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0.95; }
+      100% { transform: translateX(-240px) translateY(130px) rotate(180deg); opacity: 0.1; }
     }
 
-    /* Scrolling Autumn Trees Layer */
+    /* Scrolling Snowy Pine Trees Layer */
     .tree-strip {
       position: absolute;
-      bottom: 34px;
+      bottom: 32px;
       left: 0;
       width: 200%;
       height: 48px;
@@ -267,18 +269,18 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* Road & Lines */
+    /* Road & Moving Dashed Lines */
     .road-surface {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 34px;
+      height: 33px;
       background-color: #334155;
     }
     .road-marking {
       position: absolute;
-      top: 15px;
+      top: 14px;
       left: 0;
       width: 200%;
       height: 4px;
@@ -297,10 +299,10 @@
       100% { transform: translateX(-44px); }
     }
 
-    /* Semi Truck Container & Bounce */
+    /* Semi Truck Container & Driving Bounce */
     .truck-vehicle {
       position: absolute;
-      bottom: 12px;
+      bottom: 11px;
       left: 75px;
       width: 155px;
       height: 55px;
@@ -323,20 +325,20 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* Fall Progress Bar Strip */
+    /* Festive Christmas Progress Bar Strip */
     .truck-progress-bar {
       margin-top: 14px;
       width: 100%;
       height: 9px;
-      background: #78350f;
+      background: #064e3b;
       border-radius: 5px;
       overflow: hidden;
-      border: 1px solid #ea580c;
+      border: 1px solid #10b981;
     }
     .truck-progress-fill {
       height: 100%;
       width: 100%;
-      background: linear-gradient(90deg, #dc2626, #ea580c, #f59e0b, #dc2626);
+      background: linear-gradient(90deg, #dc2626, #16a34a, #ffffff, #dc2626);
       background-size: 200% 100%;
       animation: progressStrip 1.1s linear infinite;
     }
@@ -437,118 +439,147 @@
     </div>
   </div>
 
-  <!-- FALL-THEMED HILL'S SEMI TRUCK OVERLAY (SUBMIT DELAY) -->
-  <div id="truckOverlay" class="modal-overlay" style="display: none; background: rgba(15, 23, 42, 0.8); z-index: 3000;">
+  <!-- CHRISTMAS-THEMED HILL'S SEMI TRUCK OVERLAY (SUBMIT DELAY) -->
+  <div id="truckOverlay" class="modal-overlay" style="display: none; background: rgba(15, 23, 42, 0.82); z-index: 3000;">
     <div class="truck-scene-card">
       <div class="truck-stage">
         <div class="truck-sun"></div>
         
-        <!-- Animated Falling Leaves -->
-        <svg class="falling-leaf leaf-1" width="14" height="14" viewBox="0 0 24 24" fill="#dc2626"><path d="M12 2C8 6 3 10 3 15c0 5 4 7 9 7s9-2 9-7c0-5-5-9-9-13z"/></svg>
-        <svg class="falling-leaf leaf-2" width="12" height="12" viewBox="0 0 24 24" fill="#ea580c"><path d="M12 2C8 6 3 10 3 15c0 5 4 7 9 7s9-2 9-7c0-5-5-9-9-13z"/></svg>
-        <svg class="falling-leaf leaf-3" width="15" height="15" viewBox="0 0 24 24" fill="#eab308"><path d="M12 2C8 6 3 10 3 15c0 5 4 7 9 7s9-2 9-7c0-5-5-9-9-13z"/></svg>
+        <!-- Animated Falling Snowflakes -->
+        <svg class="falling-snow snow-1" width="12" height="12" viewBox="0 0 24 24" fill="#ffffff"><circle cx="12" cy="12" r="10"/></svg>
+        <svg class="falling-snow snow-2" width="16" height="16" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 2v20M2 12h20M5 5l14 14M5 19L19 5" stroke="#ffffff" stroke-width="3"/></svg>
+        <svg class="falling-snow snow-3" width="10" height="10" viewBox="0 0 24 24" fill="#ffffff"><circle cx="12" cy="12" r="10"/></svg>
+        <svg class="falling-snow snow-4" width="14" height="14" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 2v20M2 12h20M5 5l14 14M5 19L19 5" stroke="#ffffff" stroke-width="2.5"/></svg>
+        <svg class="falling-snow snow-5" width="8" height="8" viewBox="0 0 24 24" fill="#ffffff"><circle cx="12" cy="12" r="10"/></svg>
 
-        <!-- Moving Autumn Foliage Trees (Crimson, Pumpkin Orange, Golden Yellow) -->
+        <!-- Moving Snowy Pine Trees -->
         <div class="tree-strip">
           <div class="tree-group">
-            <!-- Oak/Maple Fall Trees & Roadside Pumpkins -->
-            <svg width="30" height="42" viewBox="0 0 30 42">
-              <circle cx="15" cy="15" r="14" fill="#dc2626"/>
-              <circle cx="9" cy="18" r="9" fill="#b91c1c"/>
-              <circle cx="21" cy="18" r="9" fill="#ef4444"/>
-              <rect x="13" y="28" width="4" height="14" fill="#451a03"/>
+            <!-- Snowy Christmas Pine Tree 1 -->
+            <svg width="26" height="42" viewBox="0 0 26 42">
+              <rect x="11" y="30" width="4" height="12" fill="#451a03"/>
+              <polygon points="13,2 1,26 25,26" fill="#065f46"/>
+              <polygon points="13,8 3,32 23,32" fill="#047857"/>
+              <polygon points="13,2 8,12 18,12" fill="#ffffff"/>
+              <polygon points="13,10 3,22 23,22" fill="#f8fafc" opacity="0.7"/>
             </svg>
-            <svg width="22" height="32" viewBox="0 0 22 32">
-              <circle cx="11" cy="12" r="10" fill="#f97316"/>
-              <circle cx="6" cy="15" r="7" fill="#ea580c"/>
-              <rect x="9" y="21" width="4" height="11" fill="#451a03"/>
+            <!-- Snowy Christmas Pine Tree 2 -->
+            <svg width="20" height="32" viewBox="0 0 20 32">
+              <rect x="8" y="22" width="4" height="10" fill="#451a03"/>
+              <polygon points="10,2 1,22 19,22" fill="#047857"/>
+              <polygon points="10,2 6,10 14,10" fill="#ffffff"/>
             </svg>
-            <!-- Roadside Pumpkin -->
-            <svg width="16" height="14" viewBox="0 0 16 14" style="margin-bottom: 8px;">
-              <ellipse cx="8" cy="8" rx="7" ry="5" fill="#ea580c"/>
-              <ellipse cx="8" cy="8" rx="4" ry="5" fill="#f97316"/>
-              <rect x="7" y="1" width="2" height="3" fill="#15803d"/>
+            <!-- Snowman along the roadside -->
+            <svg width="18" height="26" viewBox="0 0 18 26" style="margin-bottom: 7px;">
+              <circle cx="9" cy="18" r="7" fill="#ffffff"/>
+              <circle cx="9" cy="8" r="5" fill="#ffffff"/>
+              <polygon points="9,8 15,9 9,10" fill="#ea580c"/>
+              <rect x="6" y="2" width="6" height="3" fill="#0f172a"/>
             </svg>
-            <svg width="34" height="46" viewBox="0 0 34 46">
-              <circle cx="17" cy="16" r="15" fill="#eab308"/>
-              <circle cx="10" cy="20" r="10" fill="#ca8a04"/>
-              <circle cx="24" cy="20" r="10" fill="#fde047"/>
-              <rect x="15" y="30" width="4" height="16" fill="#451a03"/>
+            <!-- Snowy Christmas Pine Tree 3 -->
+            <svg width="30" height="46" viewBox="0 0 30 46">
+              <rect x="13" y="32" width="4" height="14" fill="#451a03"/>
+              <polygon points="15,2 1,28 29,28" fill="#064e3b"/>
+              <polygon points="15,10 3,34 27,34" fill="#047857"/>
+              <polygon points="15,2 9,14 21,14" fill="#ffffff"/>
             </svg>
           </div>
           <div class="tree-group">
-            <svg width="30" height="42" viewBox="0 0 30 42">
-              <circle cx="15" cy="15" r="14" fill="#dc2626"/>
-              <circle cx="9" cy="18" r="9" fill="#b91c1c"/>
-              <circle cx="21" cy="18" r="9" fill="#ef4444"/>
-              <rect x="13" y="28" width="4" height="14" fill="#451a03"/>
+            <svg width="26" height="42" viewBox="0 0 26 42">
+              <rect x="11" y="30" width="4" height="12" fill="#451a03"/>
+              <polygon points="13,2 1,26 25,26" fill="#065f46"/>
+              <polygon points="13,8 3,32 23,32" fill="#047857"/>
+              <polygon points="13,2 8,12 18,12" fill="#ffffff"/>
+              <polygon points="13,10 3,22 23,22" fill="#f8fafc" opacity="0.7"/>
             </svg>
-            <svg width="22" height="32" viewBox="0 0 22 32">
-              <circle cx="11" cy="12" r="10" fill="#f97316"/>
-              <circle cx="6" cy="15" r="7" fill="#ea580c"/>
-              <rect x="9" y="21" width="4" height="11" fill="#451a03"/>
+            <svg width="20" height="32" viewBox="0 0 20 32">
+              <rect x="8" y="22" width="4" height="10" fill="#451a03"/>
+              <polygon points="10,2 1,22 19,22" fill="#047857"/>
+              <polygon points="10,2 6,10 14,10" fill="#ffffff"/>
             </svg>
-            <svg width="16" height="14" viewBox="0 0 16 14" style="margin-bottom: 8px;">
-              <ellipse cx="8" cy="8" rx="7" ry="5" fill="#ea580c"/>
-              <ellipse cx="8" cy="8" rx="4" ry="5" fill="#f97316"/>
-              <rect x="7" y="1" width="2" height="3" fill="#15803d"/>
+            <svg width="18" height="26" viewBox="0 0 18 26" style="margin-bottom: 7px;">
+              <circle cx="9" cy="18" r="7" fill="#ffffff"/>
+              <circle cx="9" cy="8" r="5" fill="#ffffff"/>
+              <polygon points="9,8 15,9 9,10" fill="#ea580c"/>
+              <rect x="6" y="2" width="6" height="3" fill="#0f172a"/>
             </svg>
-            <svg width="34" height="46" viewBox="0 0 34 46">
-              <circle cx="17" cy="16" r="15" fill="#eab308"/>
-              <circle cx="10" cy="20" r="10" fill="#ca8a04"/>
-              <circle cx="24" cy="20" r="10" fill="#fde047"/>
-              <rect x="15" y="30" width="4" height="16" fill="#451a03"/>
+            <svg width="30" height="46" viewBox="0 0 30 46">
+              <rect x="13" y="32" width="4" height="14" fill="#451a03"/>
+              <polygon points="15,2 1,28 29,28" fill="#064e3b"/>
+              <polygon points="15,10 3,34 27,34" fill="#047857"/>
+              <polygon points="15,2 9,14 21,14" fill="#ffffff"/>
             </svg>
           </div>
         </div>
 
-        <!-- Road & Moving Lines -->
+        <!-- Road Surface -->
         <div class="road-surface">
           <div class="road-marking"></div>
         </div>
 
-        <!-- Semi Truck with Hill's Branding -->
+        <!-- Semi Truck with Blue Hill's Logo and Festive Christmas Touches -->
         <div class="truck-vehicle">
-          <svg width="150" height="52" viewBox="0 0 150 52">
-            <!-- Headlight Beam Glow -->
-            <polygon points="128,30 150,22 150,40 128,35" fill="rgba(254, 240, 138, 0.5)"/>
+          <svg width="150" height="55" viewBox="0 0 150 55">
+            <!-- Headlight Glow -->
+            <polygon points="128,33 150,25 150,43 128,38" fill="rgba(254, 240, 138, 0.5)"/>
             
-            <!-- White Semi Trailer Body -->
-            <rect x="2" y="4" width="88" height="34" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
-            
-            <!-- Official Style Hill's Logo Badge on Side of Trailer -->
-            <!-- Hill's Red & Blue Quadrant Icon Box -->
-            <g transform="translate(8, 11)">
-              <rect x="0" y="0" width="6" height="6" fill="#e11d48"/>
-              <rect x="6" y="0" width="6" height="6" fill="#1d4ed8"/>
-              <rect x="0" y="6" width="6" height="6" fill="#1d4ed8"/>
-              <rect x="6" y="6" width="6" height="6" fill="#e11d48"/>
-            </g>
-            <!-- Bold Hill's Red Script Text -->
-            <text x="52" y="21" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="16" font-style="italic" fill="#dc2626" text-anchor="middle">Hill's</text>
-            <!-- Subtitle "PET NUTRITION" -->
-            <text x="52" y="28" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="5.5" fill="#1e3a8a" text-anchor="middle" letter-spacing="0.5">PET NUTRITION</text>
+            <!-- White Semi Trailer Body with Snow Cap on Top -->
+            <rect x="2" y="7" width="88" height="34" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+            <!-- Snow Cap on top of Trailer -->
+            <path d="M 2 8 Q 15 4, 30 7 Q 45 3, 60 7 Q 75 4, 90 8 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
 
-            <!-- Red & Blue Bottom Stripe on Trailer -->
-            <rect x="4" y="33" width="84" height="2" fill="#dc2626"/>
+            <!-- Festive Christmas String Lights along top edge of trailer -->
+            <circle cx="10" cy="10" r="1.5" fill="#ef4444"/>
+            <circle cx="22" cy="10" r="1.5" fill="#22c55e"/>
+            <circle cx="34" cy="10" r="1.5" fill="#eab308"/>
+            <circle cx="46" cy="10" r="1.5" fill="#ef4444"/>
+            <circle cx="58" cy="10" r="1.5" fill="#22c55e"/>
+            <circle cx="70" cy="10" r="1.5" fill="#eab308"/>
+            <circle cx="82" cy="10" r="1.5" fill="#ef4444"/>
+
+            <!-- BLUE Hill's Logo Badge on Side of Trailer -->
+            <g transform="translate(8, 14)">
+              <rect x="0" y="0" width="6" height="6" fill="#1d4ed8"/>
+              <rect x="6" y="0" width="6" height="6" fill="#0284c7"/>
+              <rect x="0" y="6" width="6" height="6" fill="#0284c7"/>
+              <rect x="6" y="6" width="6" height="6" fill="#1d4ed8"/>
+            </g>
+
+            <!-- BOLD BLUE "Hill's" SCRIPT LOGO TEXT -->
+            <text x="52" y="24" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="16" font-style="italic" fill="#1d4ed8" text-anchor="middle">Hill's</text>
+            <!-- Subtitle "PET NUTRITION" in Blue -->
+            <text x="52" y="31" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="5.5" fill="#0369a1" text-anchor="middle" letter-spacing="0.5">PET NUTRITION</text>
+
+            <!-- Blue Bottom Stripe on Trailer -->
+            <rect x="4" y="36" width="84" height="2" fill="#1d4ed8"/>
 
             <!-- Trailer Connector -->
-            <rect x="90" y="27" width="6" height="9" fill="#334155"/>
+            <rect x="90" y="30" width="6" height="9" fill="#334155"/>
 
-            <!-- Semi Cab Body (Navy Blue) -->
-            <path d="M 96 20 L 110 20 L 122 28 L 130 28 L 130 38 L 96 38 Z" fill="#1e3a8a" stroke="#0f172a" stroke-width="2"/>
-            <polygon points="111,22 120,28 111,28" fill="#93c5fd" stroke="#0f172a" stroke-width="1"/>
+            <!-- Semi Cab Body (Crimson Red for Christmas) -->
+            <path d="M 96 23 L 110 23 L 122 31 L 130 31 L 130 41 L 96 41 Z" fill="#b91c1c" stroke="#0f172a" stroke-width="2"/>
+            <polygon points="111,25 120,31 111,31" fill="#93c5fd" stroke="#0f172a" stroke-width="1"/>
             
+            <!-- Santa Hat on Truck Roof -->
+            <polygon points="101,23 107,15 110,23" fill="#dc2626"/>
+            <circle cx="107" cy="14" r="2" fill="#ffffff"/>
+            <rect x="100" y="21" width="11" height="2" fill="#ffffff" rx="1"/>
+
+            <!-- Christmas Wreath on Front Grille -->
+            <circle cx="127" cy="36" r="3.5" fill="#15803d"/>
+            <circle cx="127" cy="36" r="1.5" fill="#1e3a8a"/>
+            <circle cx="127" cy="33.5" r="1" fill="#dc2626"/>
+
             <!-- Chrome Exhaust Stack -->
-            <rect x="94" y="7" width="3" height="15" fill="#cbd5e1" stroke="#0f172a" stroke-width="1"/>
-            <path d="M 92 7 L 97 7" stroke="#0f172a" stroke-width="1"/>
+            <rect x="94" y="10" width="3" height="15" fill="#cbd5e1" stroke="#0f172a" stroke-width="1"/>
+            <path d="M 92 10 L 97 10" stroke="#0f172a" stroke-width="1"/>
 
             <!-- Front Bumper & Headlight -->
-            <rect x="129" y="33" width="3" height="5" fill="#fef08a"/>
-            <rect x="128" y="35" width="4" height="4" fill="#475569"/>
+            <rect x="129" y="36" width="3" height="5" fill="#fef08a"/>
+            <rect x="128" y="38" width="4" height="4" fill="#475569"/>
 
             <!-- Animated Wheels -->
-            <g transform="translate(18, 38)">
+            <g transform="translate(18, 41)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
               <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
               <g class="wheel-spin">
@@ -557,7 +588,7 @@
               </g>
             </g>
 
-            <g transform="translate(36, 38)">
+            <g transform="translate(36, 41)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
               <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
               <g class="wheel-spin">
@@ -566,7 +597,7 @@
               </g>
             </g>
 
-            <g transform="translate(104, 38)">
+            <g transform="translate(104, 41)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
               <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
               <g class="wheel-spin">
@@ -575,7 +606,7 @@
               </g>
             </g>
 
-            <g transform="translate(122, 38)">
+            <g transform="translate(122, 41)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
               <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
               <g class="wheel-spin">
@@ -591,7 +622,7 @@
         <div class="truck-progress-fill"></div>
       </div>
 
-      <div id="truckLoadingText" style="margin-top: 10px; font-weight: 700; color: #ffedd5; font-size: 13px;">
+      <div id="truckLoadingText" style="margin-top: 10px; font-weight: 700; color: #ffffff; font-size: 13px;">
         Saving submission...
       </div>
     </div>
@@ -631,7 +662,7 @@
       document.getElementById('loadingOverlay').style.display = 'none';
     }
 
-    // Fall Hill's Semi Truck Loading Overlay (Triggered exclusively on Submit)
+    // Christmas Hill's Semi Truck Loading Overlay (Triggered exclusively on Submit)
     function showTruckLoading(text = "Saving submission...") {
       document.getElementById('truckLoadingText').textContent = text;
       document.getElementById('truckOverlay').style.display = 'flex';
@@ -1061,7 +1092,7 @@
       submitBtn.disabled = true;
       submitBtn.innerText = "Submitting...";
 
-      // Triggers the fall-themed Hill's truck animation upon submit
+      // Triggers the Christmas-themed Hill's semi truck animation upon submit
       showTruckLoading("Saving submission...");
       const startTime = Date.now();
 
