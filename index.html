@@ -3,7 +3,7 @@
 <head>
   <base target="_top">
   <meta charset="UTF-8">
-  <title>Route Status Entry</title>
+  <title>DEV Route Status Entry</title>
   <style>
     body { 
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -402,7 +402,7 @@
     </form>
   </div>
 
-  <!-- ANIMATED SEMI TRUCK LOADING OVERLAY (SHOWS ON SUBMIT) -->
+  <!-- ANIMATED SEMI TRUCK OVERLAY (STRICTLY DISPLAYED ONLY ON SUBMIT) -->
   <div id="loadingOverlay" class="modal-overlay" style="display: none; background: rgba(15, 23, 42, 0.75); z-index: 3000;">
     <div class="truck-scene-card">
       <div class="truck-stage">
@@ -721,17 +721,13 @@
       locationSelect.disabled = (userAllowedLocs.length <= 1);
       
       updateLocationDropdownLabels();
-      triggerGridRender();
-    }
-
-    function triggerGridRender() {
       renderGrid();
     }
 
-    document.getElementById('location').addEventListener('change', triggerGridRender);
+    document.getElementById('location').addEventListener('change', renderGrid);
     document.getElementById('week').addEventListener('change', function() {
       updateLocationDropdownLabels();
-      triggerGridRender();
+      renderGrid();
     });
 
     function updateSelectColorAndState(selectElement, idx) {
@@ -954,7 +950,7 @@
       submitBtn.disabled = true;
       submitBtn.innerText = "Submitting...";
 
-      // Trigger the animated semi-truck screen on submit
+      // Display truck loader animation exclusively on form submission
       showLoading("Saving submission...");
       const startTime = Date.now();
 
@@ -1005,7 +1001,6 @@
           body: formData
         });
 
-        // Enforce the 3000ms animation delay before finishing
         const elapsedTime = Date.now() - startTime;
         if (elapsedTime < 3000) {
           await new Promise(resolve => setTimeout(resolve, 3000 - elapsedTime));
