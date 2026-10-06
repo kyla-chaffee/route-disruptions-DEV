@@ -402,7 +402,7 @@
     </form>
   </div>
 
-  <!-- ANIMATED SEMI TRUCK LOADING OVERLAY -->
+  <!-- ANIMATED SEMI TRUCK LOADING OVERLAY (SHOWS ON SUBMIT) -->
   <div id="loadingOverlay" class="modal-overlay" style="display: none; background: rgba(15, 23, 42, 0.75); z-index: 3000;">
     <div class="truck-scene-card">
       <div class="truck-stage">
@@ -504,7 +504,7 @@
       </div>
 
       <div id="loadingText" style="margin-top: 10px; font-weight: 700; color: #0f172a; font-size: 13px;">
-        Loading route data...
+        Saving submission...
       </div>
     </div>
   </div>
@@ -533,7 +533,7 @@
     const urlEmail = urlParams.get('email') || '';
     const urlLocation = urlParams.get('location') || '';
 
-    function showLoading(text = "Loading route data...") {
+    function showLoading(text = "Saving submission...") {
       document.getElementById('loadingText').textContent = text;
       document.getElementById('loadingOverlay').style.display = 'flex';
     }
@@ -614,7 +614,7 @@
         const opt = document.createElement('option');
         opt.value = weekStr;
         opt.textContent = weekStr;
-        if (i === 1) opt.selected = true; // Default to NEXT week
+        if (i === 1) opt.selected = true;
         weekSelect.appendChild(opt);
       }
     }
@@ -648,7 +648,6 @@
     }
 
     window.onload = function() {
-      showLoading("Loading your location options and configuration...");
       currentUserEmail = urlEmail.trim();
       buildWeekDropdown();
 
@@ -656,7 +655,6 @@
         .then(res => res.json())
         .then(config => { initFormWithConfig(config); })
         .catch(err => {
-          hideLoading();
           showAlert("Failed to load options config: " + err.message, "Configuration Error");
         });
     };
@@ -703,7 +701,6 @@
       if (userAllowedLocs.length === 0) {
         locationSelect.innerHTML = '<option value="">No locations configured for user</option>';
         document.getElementById('gridBody').innerHTML = '<tr><td colspan="10" style="padding: 16px; color: red;">No routes found for your account.</td></tr>';
-        hideLoading();
         return;
       }
 
@@ -728,10 +725,7 @@
     }
 
     function triggerGridRender() {
-      showLoading("Searching for Historical Data...");
-      setTimeout(() => {
-        renderGrid();
-      }, 150);
+      renderGrid();
     }
 
     document.getElementById('location').addEventListener('change', triggerGridRender);
@@ -815,7 +809,6 @@
       if (activeRoutes.length === 0) {
         tbody.innerHTML = '<tr><td colspan="10" style="padding: 16px; color: #475569;">Select a valid location to populate routes.</td></tr>';
         updateSubmitButtonState(false);
-        hideLoading();
         return;
       }
 
@@ -889,7 +882,6 @@
       });
 
       activeRoutes.forEach((r, idx) => updateRowDisruptionFields(idx));
-      hideLoading();
     }
 
     function submitData() {
@@ -962,6 +954,7 @@
       submitBtn.disabled = true;
       submitBtn.innerText = "Submitting...";
 
+      // Trigger the animated semi-truck screen on submit
       showLoading("Saving submission...");
       const startTime = Date.now();
 
@@ -1012,6 +1005,7 @@
           body: formData
         });
 
+        // Enforce the 3000ms animation delay before finishing
         const elapsedTime = Date.now() - startTime;
         if (elapsedTime < 3000) {
           await new Promise(resolve => setTimeout(resolve, 3000 - elapsedTime));
