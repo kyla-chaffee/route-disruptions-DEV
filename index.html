@@ -527,7 +527,22 @@
         <button type="button" id="csvBtn" class="btn-csv" onclick="exportToExcel()">Download Excel</button>
         <button type="button" id="submitBtn" class="btn-submit" onclick="submitData()">Submit</button>
       </div>
-    </form>
+    </form> <!-- CLOSING TAG OF YOUR VISIBLE ROUTE FORM -->
+
+  <!-- ========================================================================= -->
+  <!-- PASTE NEW HIDDEN ELEMENTS RIGHT HERE                                      -->
+  <!-- ========================================================================= -->
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="onIframeLoad()"></iframe>
+
+  <form id="googleFormSubmit" 
+        action="https://docs.google.com/forms/d/e/1FAIpQLScPsvpmGevAkseCOb5naaEBTCM_Y8zkhmKqMY0ocy3N3a_IIQ/formResponse" 
+        method="POST" 
+        target="hidden_iframe" 
+        style="display:none;">
+    <input type="hidden" name="entry.1637612356" id="googleFormPayload">
+    <input type="hidden" name="pageHistory" value="0">
+    <input type="hidden" name="fvv" value="1">
+  </form>
   </div>
 
   <!-- INITIAL LOADING SPINNER OVERLAY -->
