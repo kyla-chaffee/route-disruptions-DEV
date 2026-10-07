@@ -265,13 +265,13 @@
       );
     }
 
-    /* SPRING THEME (March - May) - Pink/Purple Sunset Gradient */
+    /* SPRING THEME (March - May) - Softer Pastel Pink/Purple Sunset */
     .truck-stage.theme-spring {
-      background: linear-gradient(to bottom, #a855f7 0%, #ec4899 35%, #fde047 55%, #16a34a 55%, #15803d 68%, #334155 68%);
+      background: linear-gradient(to bottom, #e9d5ff 0%, #fbcfe8 35%, #fef08a 55%, #4ade80 55%, #22c55e 68%, #334155 68%);
     }
     .truck-stage.theme-spring .truck-sun {
-      background: #fef08a;
-      box-shadow: 0 0 14px #fef08a;
+      background: #fffbeb;
+      box-shadow: 0 0 18px #fde047;
     }
     .truck-stage.theme-spring .scenery-spring { display: flex; }
 
@@ -555,24 +555,26 @@
         <!-- Falling Snow Overlay (Winter only) -->
         <div class="snow-overlay">
           <div class="snowflake sf1">❄</div>
-          <div class="snowflake sf2">•</div>
+          <div class="snowflake sf2">❄</div>
           <div class="snowflake sf3">❄</div>
-          <div class="snowflake sf4">•</div>
+          <div class="snowflake sf4">❄</div>
           <div class="snowflake sf5">❄</div>
-          <div class="snowflake sf6">•</div>
+          <div class="snowflake sf6">❄</div>
         </div>
 
         <!-- Dynamic Background Scenery Layer -->
         <div class="scenery-strip">
           
-          <!-- SUMMER SCENERY (Green Summer Oak Tree, Umbrella) -->
+          <!-- SUMMER SCENERY (Solid Palm Tree & Umbrella) -->
           <div class="scenery-group scenery-summer">
-            <!-- Summer Green Oak Tree -->
-            <svg width="28" height="34" viewBox="0 0 28 34">
-              <rect x="12" y="22" width="4" height="12" fill="#451a03"/>
-              <circle cx="14" cy="14" r="12" fill="#15803d"/>
-              <circle cx="10" cy="10" r="8" fill="#22c55e"/>
-              <circle cx="18" cy="12" r="7" fill="#4ade80"/>
+            <!-- Solid Palm Tree -->
+            <svg width="32" height="42" viewBox="0 0 32 42">
+              <path d="M 16 42 Q 18 24 16 12" stroke="#78350f" stroke-width="3.5" fill="none"/>
+              <path d="M 16 12 Q 10 6 2 12 Q 10 14 16 12 Z" fill="#15803d"/>
+              <path d="M 16 12 Q 22 6 30 12 Q 22 14 16 12 Z" fill="#15803d"/>
+              <path d="M 16 12 Q 12 16 6 20 Q 14 18 16 12 Z" fill="#22c55e"/>
+              <path d="M 16 12 Q 20 16 26 20 Q 18 18 16 12 Z" fill="#22c55e"/>
+              <path d="M 16 12 Q 12 2 16 0 Q 20 2 16 12 Z" fill="#16a34a"/>
             </svg>
             <!-- Beach Umbrella -->
             <svg width="36" height="36" viewBox="0 0 36 36">
@@ -583,12 +585,14 @@
             </svg>
           </div>
           <div class="scenery-group scenery-summer">
-            <!-- Summer Green Oak Tree -->
-            <svg width="28" height="34" viewBox="0 0 28 34">
-              <rect x="12" y="22" width="4" height="12" fill="#451a03"/>
-              <circle cx="14" cy="14" r="12" fill="#15803d"/>
-              <circle cx="10" cy="10" r="8" fill="#22c55e"/>
-              <circle cx="18" cy="12" r="7" fill="#4ade80"/>
+            <!-- Solid Palm Tree -->
+            <svg width="32" height="42" viewBox="0 0 32 42">
+              <path d="M 16 42 Q 18 24 16 12" stroke="#78350f" stroke-width="3.5" fill="none"/>
+              <path d="M 16 12 Q 10 6 2 12 Q 10 14 16 12 Z" fill="#15803d"/>
+              <path d="M 16 12 Q 22 6 30 12 Q 22 14 16 12 Z" fill="#15803d"/>
+              <path d="M 16 12 Q 12 16 6 20 Q 14 18 16 12 Z" fill="#22c55e"/>
+              <path d="M 16 12 Q 20 16 26 20 Q 18 18 16 12 Z" fill="#22c55e"/>
+              <path d="M 16 12 Q 12 2 16 0 Q 20 2 16 12 Z" fill="#16a34a"/>
             </svg>
             <!-- Beach Umbrella -->
             <svg width="36" height="36" viewBox="0 0 36 36">
@@ -835,7 +839,7 @@
             <rect x="129" y="34" width="3" height="5" fill="#fef08a"/>
             <rect x="128" y="36" width="4" height="4" fill="#475569"/>
 
-            <!-- STATIC DETAILED WHEELS (Fixes animation orbit bug) -->
+            <!-- STATIC DETAILED WHEELS (Permanently fixes orbital rotation bug) -->
             <g transform="translate(18, 39)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
               <circle cx="0" cy="0" r="4" fill="#94a3b8"/>
