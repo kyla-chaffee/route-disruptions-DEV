@@ -29,53 +29,12 @@
       margin-bottom: 16px;
       padding-bottom: 8px;
       border-bottom: 3px solid #1f3d63;
-      flex-wrap: wrap;
-      gap: 12px;
     }
     .app-title {
       font-size: 19px;
       font-weight: 700;
       color: #0f172a;
       margin: 0;
-    }
-    .theme-picker-container {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #f1f5f9;
-      padding: 4px 10px;
-      border-radius: 6px;
-      border: 1px solid #cbd5e1;
-    }
-    .theme-picker-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: #334155;
-      margin: 0;
-    }
-    .theme-picker-select {
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 6px;
-      border-radius: 4px;
-      border: 1px solid #94a3b8;
-      background: #ffffff;
-      cursor: pointer;
-      color: #0f172a;
-    }
-    .btn-preview-theme {
-      background: #1f3d63;
-      color: #ffffff;
-      border: none;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .btn-preview-theme:hover {
-      background: #1e293b;
     }
     .disclaimer-banner {
       background-color: #fef2f2;
@@ -331,7 +290,7 @@
       transition: all 0.5s ease;
     }
 
-    /* SLOWED DOWN: Scrolling Trees Layer (10s animation instead of 2.2s) */
+    /* Smooth Scrolling Trees Layer */
     .tree-strip {
       position: absolute;
       bottom: 32px;
@@ -354,7 +313,7 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* Road Surface & Lines (Slowed down to 1.8s for smooth calm flow) */
+    /* Road Surface & Lines */
     .road-surface {
       position: absolute;
       bottom: 0;
@@ -384,7 +343,7 @@
       100% { transform: translateX(-40px); }
     }
 
-    /* Semi Truck Container & Calm Bounce */
+    /* Semi Truck Container & Bounce */
     .truck-vehicle {
       position: absolute;
       bottom: 12px;
@@ -399,7 +358,7 @@
       100% { transform: translateY(-1.5px); }
     }
 
-    /* Slowed Down Wheels */
+    /* Spinning Wheels */
     .wheel-spin {
       transform-origin: center;
       animation: rotateWheel 0.9s linear infinite;
@@ -410,7 +369,7 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* Loading Progress Bar Strip & Seasonal Themes */
+    /* Loading Progress Bar Strip */
     .truck-progress-bar {
       margin-top: 12px;
       width: 100%;
@@ -456,17 +415,6 @@
   <div class="app-container">
     <div class="app-header-bar">
       <div class="app-title">Route Status Entry</div>
-      <div class="theme-picker-container">
-        <label for="themeSelect" class="theme-picker-label">Loader Theme:</label>
-        <select id="themeSelect" class="theme-picker-select" onchange="onThemeSelectChange()">
-          <option value="auto">Auto (Seasonal)</option>
-          <option value="fall">Fall 🍂</option>
-          <option value="winter">Winter ❄️</option>
-          <option value="spring">Spring 🌸</option>
-          <option value="default">Standard 🌲</option>
-        </select>
-        <button type="button" class="btn-preview-theme" onclick="previewTruckLoading()">Preview Loader</button>
-      </div>
     </div>
 
     <div class="disclaimer-banner">
@@ -560,7 +508,7 @@
       <div class="truck-stage theme-default" id="truckStage">
         <div class="truck-sun"></div>
 
-        <!-- Slowed-Down Scrolling Trees Layer -->
+        <!-- Scrolling Trees Layer -->
         <div class="tree-strip">
           <div class="tree-group">
             <svg width="22" height="36" viewBox="0 0 22 36">
@@ -718,7 +666,7 @@
     const urlLocation = urlParams.get('location') || '';
     const urlTheme = urlParams.get('theme') || '';
 
-    /* --- SEASONAL THEME LOGIC --- */
+    /* --- AUTOMATIC SEASONAL THEME LOGIC --- */
     function getAutoSeasonTheme() {
       const currentMonth = new Date().getMonth(); // 0 = Jan, 1 = Feb, ..., 9 = Oct, 10 = Nov, 11 = Dec
       if (currentMonth === 9 || currentMonth === 10) {
@@ -733,18 +681,14 @@
     }
 
     function getActiveTheme() {
-      const selectorVal = document.getElementById('themeSelect') ? document.getElementById('themeSelect').value : 'auto';
-      if (selectorVal !== 'auto') {
-        return selectorVal;
-      }
       if (urlTheme && ['fall', 'winter', 'spring', 'default'].includes(urlTheme.toLowerCase())) {
         return urlTheme.toLowerCase();
       }
       return getAutoSeasonTheme();
     }
 
-    function applyTruckTheme(theme) {
-      const activeTheme = theme || getActiveTheme();
+    function applyTruckTheme() {
+      const activeTheme = getActiveTheme();
       const stage = document.getElementById('truckStage');
       const card = document.getElementById('truckCard');
 
@@ -752,25 +696,6 @@
         stage.className = `truck-stage theme-${activeTheme}`;
         card.className = `truck-scene-card theme-${activeTheme}`;
       }
-    }
-
-    function onThemeSelectChange() {
-      applyTruckTheme();
-    }
-
-    function previewTruckLoading() {
-      applyTruckTheme();
-      const seasonNames = {
-        fall: 'Fall 🍂',
-        winter: 'Winter ❄️',
-        spring: 'Spring 🌸',
-        default: 'Standard 🌲'
-      };
-      const activeTheme = getActiveTheme();
-      showTruckLoading(`Previewing ${seasonNames[activeTheme] || activeTheme} Theme...`);
-      setTimeout(() => {
-        hideTruckLoading();
-      }, 4000);
     }
 
     function showLoading(text = "Loading route data...") {
@@ -898,9 +823,6 @@
     }
 
     window.onload = function() {
-      if (urlTheme && ['fall', 'winter', 'spring', 'default'].includes(urlTheme.toLowerCase())) {
-        document.getElementById('themeSelect').value = urlTheme.toLowerCase();
-      }
       applyTruckTheme();
 
       showLoading("Loading your location options and configuration...");
