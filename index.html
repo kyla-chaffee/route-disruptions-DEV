@@ -160,7 +160,7 @@
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(15, 23, 42, 0.65);
+      background: rgba(15, 23, 42, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -169,7 +169,7 @@
     .modal-box {
       background: #ffffff;
       border-radius: 6px;
-      width: 440px;
+      width: 480px;
       max-width: 90%;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       border: 1px solid #94a3b8;
@@ -420,25 +420,45 @@
     </div>
   </div>
 
-  <!-- HILL'S SEMI TRUCK OVERLAY (SUBMIT DELAY) -->
-  <div id="truckOverlay" class="modal-overlay" style="display: none; background: rgba(15, 23, 42, 0.75); z-index: 3000;">
+  <!-- REGULAR HILL'S SEMI TRUCK OVERLAY (SUBMIT DELAY) -->
+  <div id="truckOverlay" class="modal-overlay" style="display: none; background: rgba(15, 23, 42, 0.7); z-index: 3000;">
     <div class="truck-scene-card">
       <div class="truck-stage">
         <div class="truck-sun"></div>
-        
-        <!-- Moving Green Trees Background -->
+
+        <!-- Moving Green Pine Trees -->
         <div class="tree-strip">
           <div class="tree-group">
-            <svg width="22" height="34" viewBox="0 0 22 34"><polygon points="11,0 1,22 21,22" fill="#15803d"/><polygon points="11,6 3,28 19,28" fill="#166534"/><rect x="9" y="28" width="4" height="6" fill="#78350f"/></svg>
-            <svg width="18" height="28" viewBox="0 0 18 28"><polygon points="9,0 0,18 18,18" fill="#16a34a"/><polygon points="9,5 2,23 16,23" fill="#15803d"/><rect x="7" y="23" width="4" height="5" fill="#78350f"/></svg>
-            <svg width="26" height="38" viewBox="0 0 26 38"><polygon points="13,0 1,26 25,26" fill="#14532d"/><polygon points="13,7 3,32 23,32" fill="#15803d"/><rect x="11" y="32" width="4" height="6" fill="#78350f"/></svg>
-            <svg width="20" height="30" viewBox="0 0 20 30"><polygon points="10,0 1,20 19,20" fill="#16a34a"/><polygon points="10,6 2,25 18,25" fill="#166534"/><rect x="8" y="25" width="4" height="5" fill="#78350f"/></svg>
+            <svg width="22" height="36" viewBox="0 0 22 36">
+              <rect x="9" y="26" width="4" height="10" fill="#451a03"/>
+              <polygon points="11,2 1,26 21,26" fill="#15803d"/>
+              <polygon points="11,8 3,22 19,22" fill="#166534"/>
+            </svg>
+            <svg width="18" height="28" viewBox="0 0 18 28">
+              <rect x="7" y="20" width="4" height="8" fill="#451a03"/>
+              <polygon points="9,2 1,20 17,20" fill="#166534"/>
+            </svg>
+            <svg width="26" height="40" viewBox="0 0 26 40">
+              <rect x="11" y="28" width="4" height="12" fill="#451a03"/>
+              <polygon points="13,2 1,28 25,28" fill="#15803d"/>
+              <polygon points="13,10 3,24 23,24" fill="#166534"/>
+            </svg>
           </div>
           <div class="tree-group">
-            <svg width="22" height="34" viewBox="0 0 22 34"><polygon points="11,0 1,22 21,22" fill="#15803d"/><polygon points="11,6 3,28 19,28" fill="#166534"/><rect x="9" y="28" width="4" height="6" fill="#78350f"/></svg>
-            <svg width="18" height="28" viewBox="0 0 18 28"><polygon points="9,0 0,18 18,18" fill="#16a34a"/><polygon points="9,5 2,23 16,23" fill="#15803d"/><rect x="7" y="23" width="4" height="5" fill="#78350f"/></svg>
-            <svg width="26" height="38" viewBox="0 0 26 38"><polygon points="13,0 1,26 25,26" fill="#14532d"/><polygon points="13,7 3,32 23,32" fill="#15803d"/><rect x="11" y="32" width="4" height="6" fill="#78350f"/></svg>
-            <svg width="20" height="30" viewBox="0 0 20 30"><polygon points="10,0 1,20 19,20" fill="#16a34a"/><polygon points="10,6 2,25 18,25" fill="#166534"/><rect x="8" y="25" width="4" height="5" fill="#78350f"/></svg>
+            <svg width="22" height="36" viewBox="0 0 22 36">
+              <rect x="9" y="26" width="4" height="10" fill="#451a03"/>
+              <polygon points="11,2 1,26 21,26" fill="#15803d"/>
+              <polygon points="11,8 3,22 19,22" fill="#166534"/>
+            </svg>
+            <svg width="18" height="28" viewBox="0 0 18 28">
+              <rect x="7" y="20" width="4" height="8" fill="#451a03"/>
+              <polygon points="9,2 1,20 17,20" fill="#166534"/>
+            </svg>
+            <svg width="26" height="40" viewBox="0 0 26 40">
+              <rect x="11" y="28" width="4" height="12" fill="#451a03"/>
+              <polygon points="13,2 1,28 25,28" fill="#15803d"/>
+              <polygon points="13,10 3,24 23,24" fill="#166534"/>
+            </svg>
           </div>
         </div>
 
@@ -447,17 +467,17 @@
           <div class="road-marking"></div>
         </div>
 
-        <!-- Semi Truck with Official Blue Hill's Logo -->
+        <!-- Semi Truck with Official Hill's Branding -->
         <div class="truck-vehicle">
           <svg width="150" height="52" viewBox="0 0 150 52">
-            <!-- Headlight Beam -->
-            <polygon points="128,28 150,22 150,38 128,33" fill="rgba(254, 240, 138, 0.45)"/>
+            <!-- Headlight Glow -->
+            <polygon points="128,30 150,22 150,40 128,35" fill="rgba(254, 240, 138, 0.4)"/>
             
             <!-- White Semi Trailer Body -->
-            <rect x="2" y="4" width="88" height="34" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+            <rect x="2" y="5" width="88" height="34" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
 
             <!-- OFFICIAL HILL'S LOGO EMBLEM (4-Quadrant Square) -->
-            <g transform="translate(8, 11)">
+            <g transform="translate(8, 12)">
               <rect x="0" y="0" width="13" height="13" rx="1" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8"/>
               <rect x="1" y="1" width="5" height="5" fill="#dc2626"/> <!-- Top-Left Red -->
               <rect x="7" y="1" width="5" height="5" fill="#1d4ed8"/> <!-- Top-Right Blue -->
@@ -466,59 +486,59 @@
             </g>
 
             <!-- BLUE "Hill's" SCRIPT LOGO TEXT -->
-            <text x="54" y="21" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="15" font-style="italic" fill="#1d4ed8" text-anchor="middle">Hill's</text>
+            <text x="54" y="22" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="15" font-style="italic" fill="#1d4ed8" text-anchor="middle">Hill's</text>
             <!-- Subtitle "PET NUTRITION" in Blue -->
-            <text x="54" y="28" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="5" fill="#0284c7" text-anchor="middle" letter-spacing="0.5">PET NUTRITION</text>
+            <text x="54" y="29" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="5" fill="#0284c7" text-anchor="middle" letter-spacing="0.5">PET NUTRITION</text>
 
             <!-- Blue Bottom Stripe on Trailer -->
-            <rect x="4" y="33" width="84" height="2" fill="#1d4ed8"/>
+            <rect x="4" y="34" width="84" height="2" fill="#1d4ed8"/>
 
             <!-- Trailer Connector -->
-            <rect x="90" y="27" width="6" height="9" fill="#334155"/>
+            <rect x="90" y="28" width="6" height="9" fill="#334155"/>
 
-            <!-- Semi Cab Body (Navy Blue) -->
-            <path d="M 96 20 L 110 20 L 122 28 L 130 28 L 130 38 L 96 38 Z" fill="#1f3d63" stroke="#0f172a" stroke-width="2"/>
-            <polygon points="111,22 120,28 111,28" fill="#93c5fd" stroke="#0f172a" stroke-width="1"/>
-            
-            <!-- Exhaust Stack -->
-            <rect x="94" y="7" width="3" height="15" fill="#cbd5e1" stroke="#0f172a" stroke-width="1"/>
-            <path d="M 92 7 L 97 7" stroke="#0f172a" stroke-width="1"/>
+            <!-- Semi Cab Body (Navy / Corporate Blue) -->
+            <path d="M 96 21 L 110 21 L 122 29 L 130 29 L 130 39 L 96 39 Z" fill="#1f3d63" stroke="#0f172a" stroke-width="2"/>
+            <polygon points="111,23 120,29 111,29" fill="#bae6fd" stroke="#0f172a" stroke-width="1"/>
+
+            <!-- Chrome Exhaust Stack -->
+            <rect x="94" y="8" width="3" height="14" fill="#cbd5e1" stroke="#0f172a" stroke-width="1"/>
+            <path d="M 92 8 L 97 8" stroke="#0f172a" stroke-width="1"/>
 
             <!-- Front Bumper & Headlight -->
-            <rect x="129" y="33" width="3" height="4" fill="#fef08a"/>
-            <rect x="128" y="35" width="4" height="4" fill="#64748b"/>
+            <rect x="129" y="34" width="3" height="5" fill="#fef08a"/>
+            <rect x="128" y="36" width="4" height="4" fill="#475569"/>
 
             <!-- Animated Wheels -->
-            <g transform="translate(18, 38)">
+            <g transform="translate(18, 39)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
-              <circle cx="0" cy="0" r="3.5" fill="#cbd5e1"/>
+              <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
               <g class="wheel-spin">
                 <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="#0f172a" stroke-width="1.2"/>
                 <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#0f172a" stroke-width="1.2"/>
               </g>
             </g>
 
-            <g transform="translate(36, 38)">
+            <g transform="translate(36, 39)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
-              <circle cx="0" cy="0" r="3.5" fill="#cbd5e1"/>
+              <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
               <g class="wheel-spin">
                 <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="#0f172a" stroke-width="1.2"/>
                 <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#0f172a" stroke-width="1.2"/>
               </g>
             </g>
 
-            <g transform="translate(104, 38)">
+            <g transform="translate(104, 39)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
-              <circle cx="0" cy="0" r="3.5" fill="#cbd5e1"/>
+              <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
               <g class="wheel-spin">
                 <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="#0f172a" stroke-width="1.2"/>
                 <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#0f172a" stroke-width="1.2"/>
               </g>
             </g>
 
-            <g transform="translate(122, 38)">
+            <g transform="translate(122, 39)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
-              <circle cx="0" cy="0" r="3.5" fill="#cbd5e1"/>
+              <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
               <g class="wheel-spin">
                 <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="#0f172a" stroke-width="1.2"/>
                 <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#0f172a" stroke-width="1.2"/>
@@ -538,6 +558,7 @@
     </div>
   </div>
 
+  <!-- CUSTOM MODAL (ALERTS & CONFIRMATIONS) -->
   <div id="customModal" class="modal-overlay" style="display: none;">
     <div class="modal-box">
       <div id="modalTitle" class="modal-header">Validation Error</div>
@@ -562,7 +583,6 @@
     const urlEmail = urlParams.get('email') || '';
     const urlLocation = urlParams.get('location') || '';
 
-    // Standard Spinner Loading Overlay (Initial page load & dropdown changes)
     function showLoading(text = "Loading route data...") {
       document.getElementById('loadingText').textContent = text;
       document.getElementById('loadingOverlay').style.display = 'flex';
@@ -572,7 +592,6 @@
       document.getElementById('loadingOverlay').style.display = 'none';
     }
 
-    // Hill's Semi Truck Loading Overlay (Triggered exclusively on Submit)
     function showTruckLoading(text = "Saving submission...") {
       document.getElementById('truckLoadingText').textContent = text;
       document.getElementById('truckOverlay').style.display = 'flex';
@@ -1040,17 +1059,35 @@
         }
       });
 
-      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeWUljuS3aE39SLWgHimHu4poDyRO7I39sZ_6MsbhN2F2CYdg/formResponse";
+      const payloadString = JSON.stringify(payload);
+
+      const IS_DEV = true; // Set to true for DEV, false for PROD
+      
+      const formUrl = IS_DEV
+        ? "https://docs.google.com/forms/d/e/1FAIpQLSeWUljuS3aE39SLWgHimHu4poDyRO7I39sZ_6MsbhN2F2CYdg/formResponse"
+        : "https://docs.google.com/forms/d/e/1FAIpQLScPsvpmGevAkseCOb5naaEBTCM_Y8zkhmKqMY0ocy3N3a_IIQ/formResponse";
+      
       const formData = new URLSearchParams();
-      formData.append("entry.1637612356", JSON.stringify(payload));
+      formData.append("entry.1637612356", payloadString);
 
       try {
+        if (payloadString.length > 32000) {
+          throw new Error(`Payload length limit exceeded (${payloadString.length} chars). Data too large for Google Forms.`);
+        }
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => {
+          controller.abort();
+        }, 15000);
+
         await fetch(formUrl, {
           method: "POST",
           mode: "no-cors",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: formData
+          body: formData,
+          signal: controller.signal
         });
+
+        clearTimeout(timeoutId);
 
         const elapsedTime = Date.now() - startTime;
         if (elapsedTime < 3000) {
@@ -1070,7 +1107,6 @@
         activeRoutes.forEach((r, idx) => {
           days.forEach(day => {
             if (r.activeDays && r.activeDays.includes(day)) {
-              const fullDay = day === 'mon' ? 'monday' : day === 'tue' ? 'tuesday' : day === 'wed' ? 'wednesday' : day === 'thu' ? 'thursday' : 'friday';
               const dayVal = form[`${day}_${idx}`] ? form[`${day}_${idx}`].value : 'Covered';
               const recKey = r.code.toLowerCase().replace(/[^a-z0-9]/g, '') + '_' + day;
 
@@ -1104,6 +1140,7 @@
           "Success",
           true
         );
+
       } catch (err) {
         const elapsedTime = Date.now() - startTime;
         if (elapsedTime < 3000) {
@@ -1113,7 +1150,35 @@
         hideTruckLoading();
         submitBtn.disabled = false;
         updateSubmitButtonState(hasExistingSubmission);
-        showAlert("Submission failed: " + err.message, "Submission Error");
+
+        const isoTimestamp = new Date().toISOString();
+        const byteSize = payloadString ? payloadString.length : 0;
+        const errType = err.name || 'NetworkError';
+        let errMsg = err.message || 'Service communication failed.';
+
+        if (errType === 'AbortError' || errMsg.includes('aborted') || errMsg.includes('abort')) {
+          errMsg = 'Request timed out (server took longer than 15 seconds to respond)';
+        } else if (errMsg.toLowerCase().includes('failed to fetch')) {
+          errMsg = 'Failed to fetch (lost connection)';
+        }
+
+        console.error("Submission Failure:", { errType, errMsg, isoTimestamp, byteSize, payload });
+
+        const diagnosticText = 
+          `Timestamp: ${isoTimestamp}\n` +
+          `Error Type: ${errType}\n` +
+          `Details: ${errMsg}\n` +
+          `Location: ${payload.location}\n` +
+          `Payload Size: ${byteSize} bytes`;
+
+        showAlert(
+          `The submission was NOT successful.\n\n` +
+          `Please try again. If the issue persists, please take a screenshot of this error and send to:\n` +
+          `• <strong>kyla_chaffee@hillspet.com</strong>\n` +
+          `• <strong>devon_doherty@hillspet.com</strong>\n\n` +
+          `Diagnostic Details:\n${diagnosticText}`,
+          "Submission Failure"
+        );
       }
     }
 
