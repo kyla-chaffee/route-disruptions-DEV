@@ -242,6 +242,7 @@
       box-shadow: 0 0 14px #ea580c;
     }
     .truck-stage.theme-fall .scenery-fall { display: flex; }
+    .truck-stage.theme-fall .leaves-overlay { display: block; }
 
     /* WINTER THEME (December - February) */
     .truck-stage.theme-winter {
@@ -305,6 +306,30 @@
     @keyframes scrollScenery {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
+    }
+
+    /* Falling Leaves Overlay (Fall) */
+    .leaves-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      display: none;
+      z-index: 10;
+    }
+    .leaf {
+      position: absolute;
+      top: -15px;
+      opacity: 0.85;
+      animation: leafFall 5s linear infinite;
+    }
+    .lf1 { left: 15%; animation-duration: 4.5s; animation-delay: 0s; font-size: 12px; }
+    .lf2 { left: 45%; animation-duration: 5.8s; animation-delay: 1.5s; font-size: 14px; }
+    .lf3 { left: 75%; animation-duration: 4.2s; animation-delay: 0.5s; font-size: 11px; }
+    .lf4 { left: 30%; animation-duration: 6.0s; animation-delay: 2.5s; font-size: 13px; }
+
+    @keyframes leafFall {
+      0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0.9; }
+      100% { transform: translateY(110px) rotate(240deg) translateX(15px); opacity: 0; }
     }
 
     /* Falling Snow Overlay (Winter) */
@@ -530,6 +555,14 @@
       <div class="truck-stage theme-summer" id="truckStage">
         <div class="truck-sun"></div>
 
+        <!-- Falling Leaves Overlay (Fall only) -->
+        <div class="leaves-overlay">
+          <div class="leaf lf1">🍂</div>
+          <div class="leaf lf2">🍁</div>
+          <div class="leaf lf3">🍂</div>
+          <div class="leaf lf4">🍁</div>
+        </div>
+
         <!-- Falling Snow Overlay (Winter only) -->
         <div class="snow-overlay">
           <div class="snowflake sf1">❄</div>
@@ -543,38 +576,32 @@
         <!-- Dynamic Background Scenery Layer -->
         <div class="scenery-strip">
           
-          <!-- SUMMER SCENERY (Beach, Sand, Ocean, Palm Tree, Umbrella) -->
+          <!-- SUMMER SCENERY (Green Summer Oak Tree, Umbrella - NO BEACH BALL, NO BIRD-LIKE PALM) -->
           <div class="scenery-group scenery-summer">
-            <svg width="32" height="42" viewBox="0 0 32 42">
-              <path d="M 12 42 Q 18 24 16 12" stroke="#78350f" stroke-width="3.5" fill="none"/>
-              <circle cx="15" cy="12" r="2" fill="#451a03"/>
-              <circle cx="17" cy="13" r="2" fill="#451a03"/>
-              <path d="M 16 12 Q 6 4 0 10" stroke="#15803d" stroke-width="2.5" fill="none"/>
-              <path d="M 16 12 Q 26 4 32 10" stroke="#15803d" stroke-width="2.5" fill="none"/>
-              <path d="M 16 12 Q 10 -2 14 -6" stroke="#22c55e" stroke-width="2.5" fill="none"/>
-              <path d="M 16 12 Q 22 -2 18 -6" stroke="#22c55e" stroke-width="2.5" fill="none"/>
+            <!-- Summer Green Oak Tree -->
+            <svg width="28" height="34" viewBox="0 0 28 34">
+              <rect x="12" y="22" width="4" height="12" fill="#451a03"/>
+              <circle cx="14" cy="14" r="12" fill="#15803d"/>
+              <circle cx="10" cy="10" r="8" fill="#22c55e"/>
+              <circle cx="18" cy="12" r="7" fill="#4ade80"/>
             </svg>
+            <!-- Beach Umbrella -->
             <svg width="36" height="36" viewBox="0 0 36 36">
               <line x1="18" y1="10" x2="18" y2="36" stroke="#64748b" stroke-width="2"/>
               <path d="M 4 16 Q 18 4 32 16 Z" fill="#ef4444"/>
               <path d="M 11 13.5 Q 18 4 25 13.5 Z" fill="#ffffff"/>
               <path d="M 15 11 Q 18 4 21 11 Z" fill="#ef4444"/>
             </svg>
-            <svg width="30" height="24" viewBox="0 0 30 24">
-              <circle cx="15" cy="15" r="5" fill="#facc15"/>
-              <path d="M 15 10 A 5 5 0 0 0 15 20" fill="#ef4444"/>
-            </svg>
           </div>
           <div class="scenery-group scenery-summer">
-            <svg width="32" height="42" viewBox="0 0 32 42">
-              <path d="M 12 42 Q 18 24 16 12" stroke="#78350f" stroke-width="3.5" fill="none"/>
-              <circle cx="15" cy="12" r="2" fill="#451a03"/>
-              <circle cx="17" cy="13" r="2" fill="#451a03"/>
-              <path d="M 16 12 Q 6 4 0 10" stroke="#15803d" stroke-width="2.5" fill="none"/>
-              <path d="M 16 12 Q 26 4 32 10" stroke="#15803d" stroke-width="2.5" fill="none"/>
-              <path d="M 16 12 Q 10 -2 14 -6" stroke="#22c55e" stroke-width="2.5" fill="none"/>
-              <path d="M 16 12 Q 22 -2 18 -6" stroke="#22c55e" stroke-width="2.5" fill="none"/>
+            <!-- Summer Green Oak Tree -->
+            <svg width="28" height="34" viewBox="0 0 28 34">
+              <rect x="12" y="22" width="4" height="12" fill="#451a03"/>
+              <circle cx="14" cy="14" r="12" fill="#15803d"/>
+              <circle cx="10" cy="10" r="8" fill="#22c55e"/>
+              <circle cx="18" cy="12" r="7" fill="#4ade80"/>
             </svg>
+            <!-- Beach Umbrella -->
             <svg width="36" height="36" viewBox="0 0 36 36">
               <line x1="18" y1="10" x2="18" y2="36" stroke="#64748b" stroke-width="2"/>
               <path d="M 4 16 Q 18 4 32 16 Z" fill="#ef4444"/>
@@ -657,13 +684,22 @@
             </svg>
           </div>
 
-          <!-- SPRING SCENERY (Green Trees & Flower Bushes) -->
+          <!-- SPRING SCENERY (Green Trees, Flower Bushes & Spring Flowers) -->
           <div class="scenery-group scenery-spring">
+            <!-- Pine tree -->
             <svg width="22" height="36" viewBox="0 0 22 36">
               <rect x="9" y="26" width="4" height="10" fill="#78350f"/>
               <polygon points="11,2 1,26 21,26" fill="#22c55e"/>
               <polygon points="11,8 3,22 19,22" fill="#15803d"/>
             </svg>
+            
+            <!-- Pink Tulip -->
+            <svg width="16" height="20" viewBox="0 0 16 20">
+              <rect x="7" y="8" width="2" height="12" fill="#16a34a"/>
+              <path d="M 4 8 Q 8 13 12 8 L 12 4 L 10 6 L 8 2 L 6 6 L 4 4 Z" fill="#ec4899"/>
+            </svg>
+
+            <!-- Flower Bush -->
             <svg width="35" height="26" viewBox="0 0 35 26">
               <path d="M 4 26 C 2 18, 10 12, 16 16 C 20 10, 28 12, 32 26 Z" fill="#16a34a"/>
               <circle cx="8" cy="18" r="2" fill="#ef4444"/>
@@ -671,24 +707,48 @@
               <circle cx="22" cy="17" r="2" fill="#a855f7"/>
               <circle cx="28" cy="20" r="2" fill="#ef4444"/>
             </svg>
-            <svg width="24" height="38" viewBox="0 0 24 38">
-              <rect x="10" y="26" width="4" height="12" fill="#78350f"/>
-              <polygon points="12,2 2,26 22,26" fill="#4ade80"/>
-              <polygon points="12,9 4,22 20,22" fill="#16a34a"/>
+
+            <!-- Blue Daisy -->
+            <svg width="16" height="16" viewBox="0 0 16 16">
+              <rect x="7" y="6" width="2" height="10" fill="#22c55e"/>
+              <circle cx="8" cy="4" r="2" fill="#facc15"/>
+              <circle cx="8" cy="1" r="1.5" fill="#60a5fa"/>
+              <circle cx="5" cy="4" r="1.5" fill="#60a5fa"/>
+              <circle cx="11" cy="4" r="1.5" fill="#60a5fa"/>
+              <circle cx="8" cy="7" r="1.5" fill="#60a5fa"/>
             </svg>
           </div>
           <div class="scenery-group scenery-spring">
+            <!-- Pine tree -->
             <svg width="22" height="36" viewBox="0 0 22 36">
               <rect x="9" y="26" width="4" height="10" fill="#78350f"/>
               <polygon points="11,2 1,26 21,26" fill="#22c55e"/>
               <polygon points="11,8 3,22 19,22" fill="#15803d"/>
             </svg>
+            
+            <!-- Blue Daisy -->
+            <svg width="16" height="16" viewBox="0 0 16 16">
+              <rect x="7" y="6" width="2" height="10" fill="#22c55e"/>
+              <circle cx="8" cy="4" r="2" fill="#facc15"/>
+              <circle cx="8" cy="1" r="1.5" fill="#60a5fa"/>
+              <circle cx="5" cy="4" r="1.5" fill="#60a5fa"/>
+              <circle cx="11" cy="4" r="1.5" fill="#60a5fa"/>
+              <circle cx="8" cy="7" r="1.5" fill="#60a5fa"/>
+            </svg>
+
+            <!-- Flower Bush -->
             <svg width="35" height="26" viewBox="0 0 35 26">
               <path d="M 4 26 C 2 18, 10 12, 16 16 C 20 10, 28 12, 32 26 Z" fill="#16a34a"/>
               <circle cx="8" cy="18" r="2" fill="#ef4444"/>
               <circle cx="15" cy="14" r="2" fill="#facc15"/>
               <circle cx="22" cy="17" r="2" fill="#a855f7"/>
               <circle cx="28" cy="20" r="2" fill="#ef4444"/>
+            </svg>
+            
+            <!-- Pink Tulip -->
+            <svg width="16" height="20" viewBox="0 0 16 20">
+              <rect x="7" y="8" width="2" height="12" fill="#16a34a"/>
+              <path d="M 4 8 Q 8 13 12 8 L 12 4 L 10 6 L 8 2 L 6 6 L 4 4 Z" fill="#ec4899"/>
             </svg>
           </div>
 
