@@ -265,13 +265,13 @@
       );
     }
 
-    /* SPRING THEME (March - May) */
+    /* SPRING THEME (March - May) - Pink/Purple Sunset Gradient */
     .truck-stage.theme-spring {
-      background: linear-gradient(to bottom, #e0f2fe 0%, #bae6fd 55%, #4ade80 55%, #16a34a 68%, #334155 68%);
+      background: linear-gradient(to bottom, #a855f7 0%, #ec4899 35%, #fde047 55%, #16a34a 55%, #15803d 68%, #334155 68%);
     }
     .truck-stage.theme-spring .truck-sun {
       background: #fef08a;
-      box-shadow: 0 0 12px #fde047;
+      box-shadow: 0 0 14px #fef08a;
     }
     .truck-stage.theme-spring .scenery-spring { display: flex; }
 
@@ -403,17 +403,6 @@
     @keyframes truckDrive {
       0% { transform: translateY(0px); }
       100% { transform: translateY(-1.5px); }
-    }
-
-    /* Spinning Wheels */
-    .wheel-spin {
-      transform-origin: center;
-      animation: rotateWheel 0.9s linear infinite;
-    }
-
-    @keyframes rotateWheel {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
     }
 
     /* Loading Progress Bar Strip */
@@ -576,7 +565,7 @@
         <!-- Dynamic Background Scenery Layer -->
         <div class="scenery-strip">
           
-          <!-- SUMMER SCENERY (Green Summer Oak Tree, Umbrella - NO BEACH BALL, NO BIRD-LIKE PALM) -->
+          <!-- SUMMER SCENERY (Green Summer Oak Tree, Umbrella) -->
           <div class="scenery-group scenery-summer">
             <!-- Summer Green Oak Tree -->
             <svg width="28" height="34" viewBox="0 0 28 34">
@@ -684,7 +673,7 @@
             </svg>
           </div>
 
-          <!-- SPRING SCENERY (Green Trees, Flower Bushes & Spring Flowers) -->
+          <!-- SPRING SCENERY (Green Trees, Flower Bushes & More Spring Flowers) -->
           <div class="scenery-group scenery-spring">
             <!-- Pine tree -->
             <svg width="22" height="36" viewBox="0 0 22 36">
@@ -693,19 +682,31 @@
               <polygon points="11,8 3,22 19,22" fill="#15803d"/>
             </svg>
             
-            <!-- Pink Tulip -->
+            <!-- Purple Tulip -->
             <svg width="16" height="20" viewBox="0 0 16 20">
               <rect x="7" y="8" width="2" height="12" fill="#16a34a"/>
-              <path d="M 4 8 Q 8 13 12 8 L 12 4 L 10 6 L 8 2 L 6 6 L 4 4 Z" fill="#ec4899"/>
+              <path d="M 4 8 Q 8 13 12 8 L 12 4 L 10 6 L 8 2 L 6 6 L 4 4 Z" fill="#a855f7"/>
             </svg>
 
-            <!-- Flower Bush -->
+            <!-- Yellow Daisy -->
+            <svg width="16" height="16" viewBox="0 0 16 16">
+              <rect x="7" y="6" width="2" height="10" fill="#22c55e"/>
+              <circle cx="8" cy="4" r="2" fill="#ea580c"/>
+              <circle cx="8" cy="1" r="1.5" fill="#facc15"/>
+              <circle cx="5" cy="4" r="1.5" fill="#facc15"/>
+              <circle cx="11" cy="4" r="1.5" fill="#facc15"/>
+              <circle cx="8" cy="7" r="1.5" fill="#facc15"/>
+            </svg>
+
+            <!-- Dense Flower Bush -->
             <svg width="35" height="26" viewBox="0 0 35 26">
               <path d="M 4 26 C 2 18, 10 12, 16 16 C 20 10, 28 12, 32 26 Z" fill="#16a34a"/>
               <circle cx="8" cy="18" r="2" fill="#ef4444"/>
               <circle cx="15" cy="14" r="2" fill="#facc15"/>
-              <circle cx="22" cy="17" r="2" fill="#a855f7"/>
-              <circle cx="28" cy="20" r="2" fill="#ef4444"/>
+              <circle cx="22" cy="17" r="2" fill="#ec4899"/>
+              <circle cx="28" cy="20" r="2" fill="#3b82f6"/>
+              <circle cx="12" cy="19" r="1.5" fill="#a855f7"/>
+              <circle cx="25" cy="14" r="1.5" fill="#fef08a"/>
             </svg>
 
             <!-- Blue Daisy -->
@@ -716,6 +717,12 @@
               <circle cx="5" cy="4" r="1.5" fill="#60a5fa"/>
               <circle cx="11" cy="4" r="1.5" fill="#60a5fa"/>
               <circle cx="8" cy="7" r="1.5" fill="#60a5fa"/>
+            </svg>
+
+            <!-- Pink Tulip -->
+            <svg width="16" height="20" viewBox="0 0 16 20">
+              <rect x="7" y="8" width="2" height="12" fill="#16a34a"/>
+              <path d="M 4 8 Q 8 13 12 8 L 12 4 L 10 6 L 8 2 L 6 6 L 4 4 Z" fill="#ec4899"/>
             </svg>
           </div>
           <div class="scenery-group scenery-spring">
@@ -726,6 +733,33 @@
               <polygon points="11,8 3,22 19,22" fill="#15803d"/>
             </svg>
             
+            <!-- Purple Tulip -->
+            <svg width="16" height="20" viewBox="0 0 16 20">
+              <rect x="7" y="8" width="2" height="12" fill="#16a34a"/>
+              <path d="M 4 8 Q 8 13 12 8 L 12 4 L 10 6 L 8 2 L 6 6 L 4 4 Z" fill="#a855f7"/>
+            </svg>
+
+            <!-- Yellow Daisy -->
+            <svg width="16" height="16" viewBox="0 0 16 16">
+              <rect x="7" y="6" width="2" height="10" fill="#22c55e"/>
+              <circle cx="8" cy="4" r="2" fill="#ea580c"/>
+              <circle cx="8" cy="1" r="1.5" fill="#facc15"/>
+              <circle cx="5" cy="4" r="1.5" fill="#facc15"/>
+              <circle cx="11" cy="4" r="1.5" fill="#facc15"/>
+              <circle cx="8" cy="7" r="1.5" fill="#facc15"/>
+            </svg>
+
+            <!-- Dense Flower Bush -->
+            <svg width="35" height="26" viewBox="0 0 35 26">
+              <path d="M 4 26 C 2 18, 10 12, 16 16 C 20 10, 28 12, 32 26 Z" fill="#16a34a"/>
+              <circle cx="8" cy="18" r="2" fill="#ef4444"/>
+              <circle cx="15" cy="14" r="2" fill="#facc15"/>
+              <circle cx="22" cy="17" r="2" fill="#ec4899"/>
+              <circle cx="28" cy="20" r="2" fill="#3b82f6"/>
+              <circle cx="12" cy="19" r="1.5" fill="#a855f7"/>
+              <circle cx="25" cy="14" r="1.5" fill="#fef08a"/>
+            </svg>
+
             <!-- Blue Daisy -->
             <svg width="16" height="16" viewBox="0 0 16 16">
               <rect x="7" y="6" width="2" height="10" fill="#22c55e"/>
@@ -736,15 +770,6 @@
               <circle cx="8" cy="7" r="1.5" fill="#60a5fa"/>
             </svg>
 
-            <!-- Flower Bush -->
-            <svg width="35" height="26" viewBox="0 0 35 26">
-              <path d="M 4 26 C 2 18, 10 12, 16 16 C 20 10, 28 12, 32 26 Z" fill="#16a34a"/>
-              <circle cx="8" cy="18" r="2" fill="#ef4444"/>
-              <circle cx="15" cy="14" r="2" fill="#facc15"/>
-              <circle cx="22" cy="17" r="2" fill="#a855f7"/>
-              <circle cx="28" cy="20" r="2" fill="#ef4444"/>
-            </svg>
-            
             <!-- Pink Tulip -->
             <svg width="16" height="20" viewBox="0 0 16 20">
               <rect x="7" y="8" width="2" height="12" fill="#16a34a"/>
@@ -810,41 +835,29 @@
             <rect x="129" y="34" width="3" height="5" fill="#fef08a"/>
             <rect x="128" y="36" width="4" height="4" fill="#475569"/>
 
-            <!-- Animated Wheels -->
+            <!-- STATIC DETAILED WHEELS (Fixes animation orbit bug) -->
             <g transform="translate(18, 39)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
-              <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
-              <g class="wheel-spin">
-                <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="#0f172a" stroke-width="1.2"/>
-                <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#0f172a" stroke-width="1.2"/>
-              </g>
+              <circle cx="0" cy="0" r="4" fill="#94a3b8"/>
+              <circle cx="0" cy="0" r="2" fill="#cbd5e1"/>
             </g>
 
             <g transform="translate(36, 39)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
-              <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
-              <g class="wheel-spin">
-                <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="#0f172a" stroke-width="1.2"/>
-                <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#0f172a" stroke-width="1.2"/>
-              </g>
+              <circle cx="0" cy="0" r="4" fill="#94a3b8"/>
+              <circle cx="0" cy="0" r="2" fill="#cbd5e1"/>
             </g>
 
             <g transform="translate(104, 39)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
-              <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
-              <g class="wheel-spin">
-                <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="#0f172a" stroke-width="1.2"/>
-                <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#0f172a" stroke-width="1.2"/>
-              </g>
+              <circle cx="0" cy="0" r="4" fill="#94a3b8"/>
+              <circle cx="0" cy="0" r="2" fill="#cbd5e1"/>
             </g>
 
             <g transform="translate(122, 39)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
-              <circle cx="0" cy="0" r="3.5" fill="#e2e8f0"/>
-              <g class="wheel-spin">
-                <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="#0f172a" stroke-width="1.2"/>
-                <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#0f172a" stroke-width="1.2"/>
-              </g>
+              <circle cx="0" cy="0" r="4" fill="#94a3b8"/>
+              <circle cx="0" cy="0" r="2" fill="#cbd5e1"/>
             </g>
           </svg>
         </div>
