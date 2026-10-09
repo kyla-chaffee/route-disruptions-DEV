@@ -5543,8 +5543,8 @@
     ]
   },
   "existingSubmissions": {
-    "ushbalbuquerqueweek42oct12oct16": {
-      "reporterName": "Devon Doherty",
+    "ushaatlantaweek42oct12oct16": {
+      "reporterName": "Kyla Chaffee",
       "records": {
         "ha101_mon": {
           "status": "Covered",
@@ -5727,7 +5727,12 @@
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
-        },
+        }
+      }
+    },
+    "usi6anchorageweek42oct12oct16": {
+      "reporterName": "Kyla Chaffee",
+      "records": {
         "i62ak_tue": {
           "status": "Covered",
           "reasonCode": "",
@@ -5755,7 +5760,12 @@
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
-        },
+        }
+      }
+    },
+    "ushddallasweek42oct12oct16": {
+      "reporterName": "Kyla Chaffee",
+      "records": {
         "hd101_mon": {
           "status": "Covered",
           "reasonCode": "",
@@ -6112,7 +6122,12 @@
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
-        },
+        }
+      }
+    },
+    "usbpboiseweek42oct12oct16": {
+      "reporterName": "Kyla Chaffee",
+      "records": {
         "bp105_mon": {
           "status": "Covered",
           "reasonCode": "",
@@ -6168,7 +6183,12 @@
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
-        },
+        }
+      }
+    },
+    "ushbalbuquerqueweek42oct12oct16": {
+      "reporterName": "Kyla Chaffee",
+      "records": {
         "hb201_tue": {
           "status": "Covered",
           "reasonCode": "",
@@ -6315,7 +6335,12 @@
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
-        },
+        }
+      }
+    },
+    "usjlgreensboroweek42oct12oct16": {
+      "reporterName": "Devon Doherty",
+      "records": {
         "jl101_mon": {
           "status": "Covered",
           "reasonCode": "",
