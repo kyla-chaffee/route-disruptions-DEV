@@ -138,9 +138,9 @@
     .form-actions { 
       margin-top: 20px; 
       text-align: right; 
-      display: flex;
-      justify-content: flex-end;
-      gap: 12px;
+      display: flex; 
+      justify-content: flex-end; 
+      gap: 12px; 
     }
     .btn-csv {
       background-color: #334155; 
@@ -155,12 +155,12 @@
     .btn-csv:hover { background-color: #1e293b; }
     .btn-submit { 
       background-color: #15803d; color: #ffffff; padding: 9px 24px; border: none; border-radius: 4px; 
-      font-weight: 700; cursor: pointer; font-size: 12px;
+      font-weight: 700; cursor: pointer; font-size: 12px; 
     }
     .btn-submit:hover { background-color: #166534; }
     .btn-resubmit {
       background-color: #991b1b; color: #ffffff; padding: 9px 24px; border: none; border-radius: 4px; 
-      font-weight: 700; cursor: pointer; font-size: 12px;
+      font-weight: 700; cursor: pointer; font-size: 12px; 
     }
     .btn-resubmit:hover { background-color: #7f1d1d; }
     .modal-overlay {
@@ -223,7 +223,7 @@
       transition: background 0.5s ease;
     }
     
-    /* SUMMER THEME (June - August) */
+    /* SUMMER THEME */
     .truck-stage.theme-summer, .truck-stage.theme-default {
       background: linear-gradient(to bottom, #38bdf8 0%, #7dd3fc 45%, #0284c7 45%, #0284c7 55%, #fef08a 55%, #fde047 68%, #334155 68%);
     }
@@ -233,7 +233,7 @@
     }
     .truck-stage.theme-summer .scenery-summer, .truck-stage.theme-default .scenery-summer { display: flex; }
 
-    /* FALL THEME (September - November) */
+    /* FALL THEME */
     .truck-stage.theme-fall {
       background: linear-gradient(to bottom, #ffedd5 0%, #fdba74 55%, #9a3412 55%, #7c2d12 68%, #334155 68%);
     }
@@ -244,7 +244,7 @@
     .truck-stage.theme-fall .scenery-fall { display: flex; }
     .truck-stage.theme-fall .leaves-overlay { display: block; }
 
-    /* WINTER THEME (December - February) */
+    /* WINTER THEME */
     .truck-stage.theme-winter {
       background: linear-gradient(to bottom, #cbd5e1 0%, #e2e8f0 55%, #94a3b8 55%, #f1f5f9 68%, #1e293b 68%);
     }
@@ -265,7 +265,7 @@
       );
     }
 
-    /* SPRING THEME (March - May) - Softer Pastel Pink/Purple Sunset */
+    /* SPRING THEME */
     .truck-stage.theme-spring {
       background: linear-gradient(to bottom, #e9d5ff 0%, #fbcfe8 35%, #fef08a 55%, #4ade80 55%, #22c55e 68%, #334155 68%);
     }
@@ -285,7 +285,6 @@
       transition: all 0.5s ease;
     }
 
-    /* Scrolling Scenery Layer */
     .scenery-strip {
       position: absolute;
       bottom: 32px;
@@ -308,7 +307,6 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* Falling Leaves Overlay (Fall) */
     .leaves-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -332,7 +330,6 @@
       100% { transform: translateY(110px) rotate(240deg) translateX(15px); opacity: 0; }
     }
 
-    /* Falling Snow Overlay (Winter) */
     .snow-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -360,7 +357,6 @@
       100% { transform: translateY(110px) translateX(12px); opacity: 0.2; }
     }
 
-    /* Road Surface & Markings */
     .road-surface {
       position: absolute;
       bottom: 0;
@@ -390,7 +386,6 @@
       100% { transform: translateX(-40px); }
     }
 
-    /* Semi Truck Container & Calm Bounce */
     .truck-vehicle {
       position: absolute;
       bottom: 12px;
@@ -405,7 +400,6 @@
       100% { transform: translateY(-1.5px); }
     }
 
-    /* Loading Progress Bar Strip */
     .truck-progress-bar {
       margin-top: 12px;
       width: 100%;
@@ -527,22 +521,7 @@
         <button type="button" id="csvBtn" class="btn-csv" onclick="exportToExcel()">Download Excel</button>
         <button type="button" id="submitBtn" class="btn-submit" onclick="submitData()">Submit</button>
       </div>
-    </form> <!-- CLOSING TAG OF YOUR VISIBLE ROUTE FORM -->
-
-  <!-- ========================================================================= -->
-  <!-- PASTE NEW HIDDEN ELEMENTS RIGHT HERE                                      -->
-  <!-- ========================================================================= -->
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="onIframeLoad()"></iframe>
-
-  <form id="googleFormSubmit" 
-        action="https://docs.google.com/forms/d/e/1FAIpQLScPsvpmGevAkseCOb5naaEBTCM_Y8zkhmKqMY0ocy3N3a_IIQ/formResponse" 
-        method="POST" 
-        target="hidden_iframe" 
-        style="display:none;">
-    <input type="hidden" name="entry.1637612356" id="googleFormPayload">
-    <input type="hidden" name="pageHistory" value="0">
-    <input type="hidden" name="fvv" value="1">
-  </form>
+    </form>
   </div>
 
   <!-- INITIAL LOADING SPINNER OVERLAY -->
@@ -559,7 +538,6 @@
       <div class="truck-stage theme-summer" id="truckStage">
         <div class="truck-sun"></div>
 
-        <!-- Falling Leaves Overlay (Fall only) -->
         <div class="leaves-overlay">
           <div class="leaf lf1">🍂</div>
           <div class="leaf lf2">🍁</div>
@@ -567,7 +545,6 @@
           <div class="leaf lf4">🍁</div>
         </div>
 
-        <!-- Falling Snow Overlay (Winter only) -->
         <div class="snow-overlay">
           <div class="snowflake sf1">❄</div>
           <div class="snowflake sf2">❄</div>
@@ -577,12 +554,9 @@
           <div class="snowflake sf6">❄</div>
         </div>
 
-        <!-- Dynamic Background Scenery Layer -->
         <div class="scenery-strip">
-          
-          <!-- SUMMER SCENERY (Solid Palm Tree & Umbrella) -->
+          <!-- Summer Scenery -->
           <div class="scenery-group scenery-summer">
-            <!-- Solid Palm Tree -->
             <svg width="32" height="42" viewBox="0 0 32 42">
               <path d="M 16 42 Q 18 24 16 12" stroke="#78350f" stroke-width="3.5" fill="none"/>
               <path d="M 16 12 Q 10 6 2 12 Q 10 14 16 12 Z" fill="#15803d"/>
@@ -591,7 +565,6 @@
               <path d="M 16 12 Q 20 16 26 20 Q 18 18 16 12 Z" fill="#22c55e"/>
               <path d="M 16 12 Q 12 2 16 0 Q 20 2 16 12 Z" fill="#16a34a"/>
             </svg>
-            <!-- Beach Umbrella -->
             <svg width="36" height="36" viewBox="0 0 36 36">
               <line x1="18" y1="10" x2="18" y2="36" stroke="#64748b" stroke-width="2"/>
               <path d="M 4 16 Q 18 4 32 16 Z" fill="#ef4444"/>
@@ -600,7 +573,6 @@
             </svg>
           </div>
           <div class="scenery-group scenery-summer">
-            <!-- Solid Palm Tree -->
             <svg width="32" height="42" viewBox="0 0 32 42">
               <path d="M 16 42 Q 18 24 16 12" stroke="#78350f" stroke-width="3.5" fill="none"/>
               <path d="M 16 12 Q 10 6 2 12 Q 10 14 16 12 Z" fill="#15803d"/>
@@ -609,7 +581,6 @@
               <path d="M 16 12 Q 20 16 26 20 Q 18 18 16 12 Z" fill="#22c55e"/>
               <path d="M 16 12 Q 12 2 16 0 Q 20 2 16 12 Z" fill="#16a34a"/>
             </svg>
-            <!-- Beach Umbrella -->
             <svg width="36" height="36" viewBox="0 0 36 36">
               <line x1="18" y1="10" x2="18" y2="36" stroke="#64748b" stroke-width="2"/>
               <path d="M 4 16 Q 18 4 32 16 Z" fill="#ef4444"/>
@@ -618,7 +589,7 @@
             </svg>
           </div>
 
-          <!-- FALL SCENERY (Autumn Pines & Oak Trees) -->
+          <!-- Fall Scenery -->
           <div class="scenery-group scenery-fall">
             <svg width="24" height="38" viewBox="0 0 24 38">
               <rect x="10" y="26" width="4" height="12" fill="#451a03"/>
@@ -649,9 +620,8 @@
             </svg>
           </div>
 
-          <!-- WINTER SCENERY (Snowman & Snow-Covered Pines) -->
+          <!-- Winter Scenery -->
           <div class="scenery-group scenery-winter">
-            <!-- Snowman -->
             <svg width="26" height="36" viewBox="0 0 26 36">
               <circle cx="13" cy="26" r="8" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8"/>
               <circle cx="13" cy="14" r="6" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8"/>
@@ -674,7 +644,6 @@
             </svg>
           </div>
           <div class="scenery-group scenery-winter">
-            <!-- Snowman -->
             <svg width="26" height="36" viewBox="0 0 26 36">
               <circle cx="13" cy="26" r="8" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8"/>
               <circle cx="13" cy="14" r="6" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8"/>
@@ -692,22 +661,17 @@
             </svg>
           </div>
 
-          <!-- SPRING SCENERY (Green Trees, Flower Bushes & More Spring Flowers) -->
+          <!-- Spring Scenery -->
           <div class="scenery-group scenery-spring">
-            <!-- Pine tree -->
             <svg width="22" height="36" viewBox="0 0 22 36">
               <rect x="9" y="26" width="4" height="10" fill="#78350f"/>
               <polygon points="11,2 1,26 21,26" fill="#22c55e"/>
               <polygon points="11,8 3,22 19,22" fill="#15803d"/>
             </svg>
-            
-            <!-- Purple Tulip -->
             <svg width="16" height="20" viewBox="0 0 16 20">
               <rect x="7" y="8" width="2" height="12" fill="#16a34a"/>
               <path d="M 4 8 Q 8 13 12 8 L 12 4 L 10 6 L 8 2 L 6 6 L 4 4 Z" fill="#a855f7"/>
             </svg>
-
-            <!-- Yellow Daisy -->
             <svg width="16" height="16" viewBox="0 0 16 16">
               <rect x="7" y="6" width="2" height="10" fill="#22c55e"/>
               <circle cx="8" cy="4" r="2" fill="#ea580c"/>
@@ -716,8 +680,6 @@
               <circle cx="11" cy="4" r="1.5" fill="#facc15"/>
               <circle cx="8" cy="7" r="1.5" fill="#facc15"/>
             </svg>
-
-            <!-- Dense Flower Bush -->
             <svg width="35" height="26" viewBox="0 0 35 26">
               <path d="M 4 26 C 2 18, 10 12, 16 16 C 20 10, 28 12, 32 26 Z" fill="#16a34a"/>
               <circle cx="8" cy="18" r="2" fill="#ef4444"/>
@@ -727,8 +689,6 @@
               <circle cx="12" cy="19" r="1.5" fill="#a855f7"/>
               <circle cx="25" cy="14" r="1.5" fill="#fef08a"/>
             </svg>
-
-            <!-- Blue Daisy -->
             <svg width="16" height="16" viewBox="0 0 16 16">
               <rect x="7" y="6" width="2" height="10" fill="#22c55e"/>
               <circle cx="8" cy="4" r="2" fill="#facc15"/>
@@ -737,28 +697,21 @@
               <circle cx="11" cy="4" r="1.5" fill="#60a5fa"/>
               <circle cx="8" cy="7" r="1.5" fill="#60a5fa"/>
             </svg>
-
-            <!-- Pink Tulip -->
             <svg width="16" height="20" viewBox="0 0 16 20">
               <rect x="7" y="8" width="2" height="12" fill="#16a34a"/>
               <path d="M 4 8 Q 8 13 12 8 L 12 4 L 10 6 L 8 2 L 6 6 L 4 4 Z" fill="#ec4899"/>
             </svg>
           </div>
           <div class="scenery-group scenery-spring">
-            <!-- Pine tree -->
             <svg width="22" height="36" viewBox="0 0 22 36">
               <rect x="9" y="26" width="4" height="10" fill="#78350f"/>
               <polygon points="11,2 1,26 21,26" fill="#22c55e"/>
               <polygon points="11,8 3,22 19,22" fill="#15803d"/>
             </svg>
-            
-            <!-- Purple Tulip -->
             <svg width="16" height="20" viewBox="0 0 16 20">
               <rect x="7" y="8" width="2" height="12" fill="#16a34a"/>
               <path d="M 4 8 Q 8 13 12 8 L 12 4 L 10 6 L 8 2 L 6 6 L 4 4 Z" fill="#a855f7"/>
             </svg>
-
-            <!-- Yellow Daisy -->
             <svg width="16" height="16" viewBox="0 0 16 16">
               <rect x="7" y="6" width="2" height="10" fill="#22c55e"/>
               <circle cx="8" cy="4" r="2" fill="#ea580c"/>
@@ -767,8 +720,6 @@
               <circle cx="11" cy="4" r="1.5" fill="#facc15"/>
               <circle cx="8" cy="7" r="1.5" fill="#facc15"/>
             </svg>
-
-            <!-- Dense Flower Bush -->
             <svg width="35" height="26" viewBox="0 0 35 26">
               <path d="M 4 26 C 2 18, 10 12, 16 16 C 20 10, 28 12, 32 26 Z" fill="#16a34a"/>
               <circle cx="8" cy="18" r="2" fill="#ef4444"/>
@@ -778,8 +729,6 @@
               <circle cx="12" cy="19" r="1.5" fill="#a855f7"/>
               <circle cx="25" cy="14" r="1.5" fill="#fef08a"/>
             </svg>
-
-            <!-- Blue Daisy -->
             <svg width="16" height="16" viewBox="0 0 16 16">
               <rect x="7" y="6" width="2" height="10" fill="#22c55e"/>
               <circle cx="8" cy="4" r="2" fill="#facc15"/>
@@ -788,31 +737,22 @@
               <circle cx="11" cy="4" r="1.5" fill="#60a5fa"/>
               <circle cx="8" cy="7" r="1.5" fill="#60a5fa"/>
             </svg>
-
-            <!-- Pink Tulip -->
             <svg width="16" height="20" viewBox="0 0 16 20">
               <rect x="7" y="8" width="2" height="12" fill="#16a34a"/>
               <path d="M 4 8 Q 8 13 12 8 L 12 4 L 10 6 L 8 2 L 6 6 L 4 4 Z" fill="#ec4899"/>
             </svg>
           </div>
-
         </div>
 
-        <!-- Road Surface -->
         <div class="road-surface">
           <div class="road-marking"></div>
         </div>
 
-        <!-- Semi Truck with Official Hill's Branding -->
         <div class="truck-vehicle">
           <svg width="150" height="52" viewBox="0 0 150 52">
-            <!-- Headlight Glow -->
             <polygon points="128,30 150,22 150,40 128,35" fill="rgba(254, 240, 138, 0.4)"/>
-            
-            <!-- White Semi Trailer Body -->
             <rect x="2" y="5" width="88" height="34" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
 
-            <!-- CHRISTMAS TREE TIED TO TRUCK ROOF (Winter Only) -->
             <g class="truck-cargo-tree" style="display: none;">
               <rect x="12" y="2" width="12" height="3" fill="#78350f" rx="1"/>
               <polygon points="22,-3 22,9 65,3" fill="#15803d"/>
@@ -822,39 +762,26 @@
               <line x1="58" y1="5" x2="58" y2="0" stroke="#b45309" stroke-width="1.5" stroke-dasharray="2,1"/>
             </g>
 
-            <!-- OFFICIAL HILL'S LOGO EMBLEM (4-Quadrant Square) -->
             <g transform="translate(8, 12)">
               <rect x="0" y="0" width="13" height="13" rx="1" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8"/>
-              <rect x="1" y="1" width="5" height="5" fill="#dc2626"/> <!-- Top-Left Red -->
-              <rect x="7" y="1" width="5" height="5" fill="#1d4ed8"/> <!-- Top-Right Blue -->
-              <rect x="1" y="7" width="5" height="5" fill="#1d4ed8"/> <!-- Bottom-Left Blue -->
-              <rect x="7" y="7" width="5" height="5" fill="#dc2626"/> <!-- Bottom-Right Red -->
+              <rect x="1" y="1" width="5" height="5" fill="#dc2626"/>
+              <rect x="7" y="1" width="5" height="5" fill="#1d4ed8"/>
+              <rect x="1" y="7" width="5" height="5" fill="#1d4ed8"/>
+              <rect x="7" y="7" width="5" height="5" fill="#dc2626"/>
             </g>
 
-            <!-- BLUE "Hill's" SCRIPT LOGO TEXT -->
             <text x="54" y="22" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="15" font-style="italic" fill="#1d4ed8" text-anchor="middle">Hill's</text>
-            <!-- Subtitle "PET NUTRITION" in Blue -->
             <text x="54" y="29" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="5" fill="#0284c7" text-anchor="middle" letter-spacing="0.5">PET NUTRITION</text>
 
-            <!-- Blue Bottom Stripe on Trailer -->
             <rect x="4" y="34" width="84" height="2" fill="#1d4ed8"/>
-
-            <!-- Trailer Connector -->
             <rect x="90" y="28" width="6" height="9" fill="#334155"/>
-
-            <!-- Semi Cab Body (Navy / Corporate Blue) -->
             <path d="M 96 21 L 110 21 L 122 29 L 130 29 L 130 39 L 96 39 Z" fill="#1f3d63" stroke="#0f172a" stroke-width="2"/>
             <polygon points="111,23 120,29 111,29" fill="#bae6fd" stroke="#0f172a" stroke-width="1"/>
-
-            <!-- Chrome Exhaust Stack -->
             <rect x="94" y="8" width="3" height="14" fill="#cbd5e1" stroke="#0f172a" stroke-width="1"/>
             <path d="M 92 8 L 97 8" stroke="#0f172a" stroke-width="1"/>
-
-            <!-- Front Bumper & Headlight -->
             <rect x="129" y="34" width="3" height="5" fill="#fef08a"/>
             <rect x="128" y="36" width="4" height="4" fill="#475569"/>
 
-            <!-- STATIC DETAILED WHEELS (Permanently fixes orbital rotation bug) -->
             <g transform="translate(18, 39)">
               <circle cx="0" cy="0" r="7.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
               <circle cx="0" cy="0" r="4" fill="#94a3b8"/>
@@ -892,7 +819,7 @@
     </div>
   </div>
 
-  <!-- CUSTOM MODAL (ALERTS & CONFIRMATIONS) -->
+  <!-- CUSTOM MODAL -->
   <div id="customModal" class="modal-overlay" style="display: none;">
     <div class="modal-box">
       <div id="modalTitle" class="modal-header">Validation Error</div>
@@ -908,8 +835,14 @@
     let locationMap = {};
     let activeRoutes = [];
     let currentUserEmail = '';
+    
+    // Carrier specific option state
     let reasonCodesList = [];
     let recoveryPlansList = [];
+    let reasonCodesByCarrier = { Ryder: [], Phillips: [] };
+    let recoveryPlansByCarrier = { Ryder: [], Phillips: [] };
+    let locationCarriers = {};
+
     let existingSubmissions = {};
     let hasExistingSubmission = false;
 
@@ -918,17 +851,16 @@
     const urlLocation = urlParams.get('location') || '';
     const urlTheme = urlParams.get('theme') || '';
 
-    /* --- AUTOMATIC SEASONAL THEME LOGIC --- */
     function getAutoSeasonTheme() {
-      const currentMonth = new Date().getMonth(); // 0 = Jan, 1 = Feb, ..., 11 = Dec
+      const currentMonth = new Date().getMonth();
       if (currentMonth === 11 || currentMonth === 0 || currentMonth === 1) {
-        return 'winter'; // Dec, Jan, Feb
+        return 'winter';
       } else if (currentMonth >= 2 && currentMonth <= 4) {
-        return 'spring'; // Mar, Apr, May
+        return 'spring';
       } else if (currentMonth >= 5 && currentMonth <= 7) {
-        return 'summer'; // Jun, Jul, Aug
+        return 'summer';
       } else if (currentMonth >= 8 && currentMonth <= 10) {
-        return 'fall';   // Sep, Oct, Nov
+        return 'fall';
       }
       return 'summer';
     }
@@ -1065,7 +997,7 @@
         if (!rawLoc) return;
 
         if (!isLocationSubmitted(rawLoc, selectedWeek)) {
-          opt.textContent = `⚠ ${rawLoc}`;
+          opt.textContent = `⚠️ ${rawLoc}`;
         } else {
           opt.textContent = rawLoc;
         }
@@ -1092,9 +1024,40 @@
         });
     };
 
+    /**
+     * Resolves the assigned carrier for a given location, defaulting to 'Ryder'.
+     */
+    function getCarrierForLocation(locationName) {
+      if (!locationName) return 'Ryder';
+      if (locationCarriers && locationCarriers[locationName]) {
+        return locationCarriers[locationName];
+      }
+
+      const cleanTarget = locationName.toLowerCase();
+      for (const key of Object.keys(locationCarriers || {})) {
+        if (cleanTarget.includes(key.toLowerCase()) || key.toLowerCase().includes(cleanTarget)) {
+          return locationCarriers[key];
+        }
+      }
+
+      return 'Ryder';
+    }
+
     function initFormWithConfig(data) {
       reasonCodesList = data.reasonCodes || [];
       recoveryPlansList = data.recoveryPlans || [];
+
+      // Load carrier-specific disruption structures
+      reasonCodesByCarrier = data.reasonCodesByCarrier || {
+        Ryder: reasonCodesList,
+        Phillips: reasonCodesList
+      };
+      recoveryPlansByCarrier = data.recoveryPlansByCarrier || {
+        Ryder: recoveryPlansList,
+        Phillips: recoveryPlansList
+      };
+      locationCarriers = data.locationCarriers || {};
+
       locationMap = data.routesByLocation || {};
       existingSubmissions = data.existingSubmissions || {};
       const emailLocations = data.emailLocations || {};
@@ -1215,7 +1178,7 @@
 
     function buildOptionsHtml(list, selectedVal) {
       let html = '<option value=""></option>';
-      list.forEach(item => {
+      (list || []).forEach(item => {
         const sel = (selectedVal && item.toLowerCase() === selectedVal.toLowerCase()) ? 'selected' : '';
         html += `<option value="${item}" ${sel}>${item}</option>`;
       });
@@ -1249,6 +1212,15 @@
         hideLoading();
         return;
       }
+
+      // Determine carrier for selected location and retrieve carrier-specific lists
+      const assignedCarrier = getCarrierForLocation(selectedLocation);
+      const activeReasonCodes = (reasonCodesByCarrier && reasonCodesByCarrier[assignedCarrier] && reasonCodesByCarrier[assignedCarrier].length > 0)
+        ? reasonCodesByCarrier[assignedCarrier]
+        : reasonCodesList;
+      const activeRecoveryPlans = (recoveryPlansByCarrier && recoveryPlansByCarrier[assignedCarrier] && recoveryPlansByCarrier[assignedCarrier].length > 0)
+        ? recoveryPlansByCarrier[assignedCarrier]
+        : recoveryPlansList;
 
       const subKey = (selectedLocation + '_' + selectedWeek).toLowerCase().replace(/[^a-z0-9]/g, '');
       const submission = existingSubmissions[subKey] || null;
@@ -1309,8 +1281,8 @@
         const disabledAttr = rowHasDown ? '' : 'disabled';
 
         html += `
-          <td><select name="reason_${idx}" ${disabledAttr}>${buildOptionsHtml(reasonCodesList, savedReason)}</select></td>
-          <td><select name="recoveryPlan_${idx}" ${disabledAttr}>${buildOptionsHtml(recoveryPlansList, savedRecovery)}</select></td>
+          <td><select name="reason_${idx}" ${disabledAttr}>${buildOptionsHtml(activeReasonCodes, savedReason)}</select></td>
+          <td><select name="recoveryPlan_${idx}" ${disabledAttr}>${buildOptionsHtml(activeRecoveryPlans, savedRecovery)}</select></td>
           <td><input type="date" name="reschedule_${idx}" value="${savedReschedule}" min="${todayStr}" ${disabledAttr}></td>
           <td><input type="text" name="comments_${idx}" value="${savedComments}" ${disabledAttr}></td>
         `;
@@ -1433,7 +1405,7 @@
 
       const payloadString = JSON.stringify(payload);
 
-      const IS_DEV = true; // Set to true for DEV, false for PROD
+      const IS_DEV = false; // Set to true for DEV, false for PROD
       
       const formUrl = IS_DEV
         ? "https://docs.google.com/forms/d/e/1FAIpQLSeWUljuS3aE39SLWgHimHu4poDyRO7I39sZ_6MsbhN2F2CYdg/formResponse"
